@@ -1,0 +1,26 @@
+# Kubectl commands
+
+kubectl apply -f <file goes here>
+
+# How to exec into a container
+kubectl exec -it <pod> <container> (if more than one inside a pod) -- <command>
+
+# Run a raw API call and avoid issues with path conversion
+MSYS_NO_PATHCONV=1 kubectl get --raw <insert raw path here> | jq #<- optionally pipe into jq for pretty printing
+
+# When updating images, you may want to rollback to a specific version at somepoint. this can be done by:
+
+# Get revision history of a resource:
+kubectl rollout history <resource>/<name>
+# Rollback the resource to specific iteration:
+kubectl rollout undo <resource>/<name> --to-revision=<number>
+
+# Finalizers can stick around and cause resources to persist when they should be deleted.
+# Here is a patch command one can use to remove all finalizers for hanging resources so 
+# hopefully they will be removed
+kubectl patch <resource_type> <resource_name> -p '{"metadata":{"finalizers":null}}'
+
+# If you have a set of really large manifest, you will run into issues, so
+# you can typically solve them by doing
+kubectl apply --server-side -f <manifest file>
+

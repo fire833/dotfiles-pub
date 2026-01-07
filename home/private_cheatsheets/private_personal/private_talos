@@ -1,0 +1,4 @@
+
+# Bootup error: [talos] [initramfs] x86_64 microarchitecture level 2 or higher is required, halting
+This is an error that ocurred when I booted using QEMU. The solution was to add `-cpu host` as a parameter to the qemu command.
+

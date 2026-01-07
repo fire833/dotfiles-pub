@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# Copyright (C) 2026 Kendall Tauser
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program; if not, write to the Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+declare -r nano=$(which nano)
+declare -r nvim=$(which nvim)
+declare -r vi=$(which vi)
+
+# Set up the editor env VAR
+if [[ "${nvim}" != "" ]]; then
+	export EDITOR=${nvim}
+elif [[ "${nano}" != "" ]]; then
+	export EDITOR=${nano}
+else
+	export EDITOR=${vi}
+fi
+
+eval "$(starship init bash)"
+
+# PS1='\n\[\e[0;90m\]-\[\e[0;90m\](\[\e[0;97m\]\d \[\e[0;97m\]\@\[\e[0;90m\])\[\e[0;90m\]-\[\e[0;90m\](\[\e[0;97m\]$(/bin/ls -1 | /usr/bin/wc -l | /bin/sed '"'"'s: ::g'"'"')\[\e[97m\] \[\e[0m\]files, \[\e[0;97m\]$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed '"'"'s/total //'"'"')\[\e[0;90m\])\[\e[0;90m\]-\[\e[0;90m\](\[\e[0;3;36m\]$(git branch 2>/dev/null | grep '"'"'^*'"'"' | colrm 1 2)\[\e[0;90m\])\n\[\e[0;90m\]-\[\e[0;90m\](\[\e[0;3;38;5;32m\]\u \[\e[0;38;5;160m\]@ \[\e[0;3;38;5;34m\]\H\[\e[0;90m\])\[\e[0;90m\]-\[\e[0;90m\](\[\e[0;97m\]\w\[\e[0;90m\]) \[\e[0;90m\]-\[\e[0;90m\]-\[\e[0;90m\]> \[\e[0m\]'
+# PS2='\[\e[0;90m\]-\[\e[0;90m\]-\[\e[0;90m\]> \[\e[0m\]'
+
+# Set up ssh-agent
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+# Set up bash aliases
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
+# Also source any local aliases just for this machine
+[ -f ~/.local_aliases ] && source ~/.local_aliases
+
+# Setting up autocompletions for this shell
+[ -d ~/.config/completions/bash ] && for file in ~/.config/completions/bash/*.bash; do source $file; done
+
+# Add windows access for vagrant to access virtualbox on windows.
+export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
+
+# Appending to path
+export PATH=$PATH:~/.local/bin:~/bin:/usr/local/go/bin:~/go/bin:~/.cargo/bin:~/.pulumi/bin:~/.yarn/bin:~/.config/yarn/global/node_modules/.bin
+
+# More nvm initialization
+[ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
+
+# Cleanup handler for exit
+function leave() {
+    echo ""
+}
+
+trap leave EXIT
+
+# eval "$(starship init bash)"

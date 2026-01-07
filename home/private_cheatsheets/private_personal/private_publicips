@@ -1,0 +1,38 @@
+
+# AWS List (blog: https://aws.amazon.com/blogs/aws/aws-ip-ranges-json/)
+https://ip-ranges.amazonaws.com/ip-ranges.json
+
+# Google Cloud list
+https://www.gstatic.com/ipranges/cloud.json
+
+# Azure Cloud List (looks like microsoft in their infinite terribleness don't have a static link, thanks microsoft! You're the best!)
+https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20240916.json
+
+# Oracle cloud list
+https://docs.oracle.com/en-us/iaas/tools/public_ip_ranges.json
+
+# Vultr list
+https://geofeed.constant.com/?json
+
+# Backblaze list
+https://www.backblaze.com/computer-backup/docs/backblaze-ip-addresses
+
+# Cloudflare list
+https://www.cloudflare.com/ips/
+
+# Akamai list
+??
+
+# PIA List
+https://serverlist.piaservers.net/vpninfo/servers/v6
+
+# Proxy IPs list
+https://github.com/proxifly/free-proxy-list?tab=readme-ov-file
+https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/all/data.json
+
+# Tor list
+https://onionoo.torproject.org/details
+
+# Atlassian List
+https://ip-ranges.atlassian.com/
+

@@ -1,0 +1,93 @@
+#!/usr/bin/fish
+
+# Copyright (C) 2026 Kendall Tauser
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program; if not, write to the Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+# Kubectl aliases
+alias k "kubectl"
+alias kcu "kubectl config use-context"
+alias kcg "kubectl config get-contexts"
+alias kcc "kubectl config current-contexthh"
+alias kg "kubectl get"
+alias kd "kubectl describe"
+alias kex "kubectl explain"
+alias kl "kubectl logs"
+alias kdl "kubectl delete"
+alias kdlf "kubectl delete -f"
+alias ka "kubectl apply"
+alias kaf "kubectl apply -f"
+alias ke "kubectl exec -it"
+alias ked "kubectl edit"
+alias kr "kubectl api-resources"
+alias ka "kubectl api-versions"
+alias ktp "kubectl top pods"
+alias ktn "kubectl top nodes"
+alias ktpa "kubectl top pods --all-namespaces"
+alias kpf "kubectl port-forward"
+
+# Describe aliases
+alias kdp "kubectl describe pod"
+alias kds "kubectl describe service"
+alias kdsa "kubectl describe serviceaccount"
+alias kdhpa "kubectl describe hpa"
+alias kdsc "kubectl describe secret"
+alias kdi "kubectl describe ingress"
+alias kdn "kubectl describe node"
+alias kdcm "kubectl describe configmap"
+
+# Delete aliases
+alias kdlp "kubectl delete pod"
+alias kdls "kubectl delete service"
+alias kdlsa "kubectl delete serviceaccount"
+alias kdlhpa "kubectl delete hpa"
+alias kdlsc "kubectl delete secret"
+alias kdlcm "kubectl delete configmap"
+alias kdli "kubectl delete ingress"
+
+# Get aliases
+alias kgn "kubectl get nodes"
+alias kgns "kubectl get namespaces"
+alias kgp "kubectl get pods"
+alias kgs "kubectl get service"
+alias kgsa "kubectl get serviceaccount"
+alias kghpa "kubectl get hpa"
+alias kgsc "kubectl get secrets"
+alias kgcm "kubectl get configmaps"
+alias kgi "kubectl get ingress"
+
+function kgpn -a node; kubectl get pods --all-namespaces --field-selector spec.nodeName=$node -o wide; end
+function ktpn -a node; kubectl top pods --all-namespaces --field-selector spec.nodeName=$node; end
+
+# Get all aliases
+alias kgpa "kubectl get pods --all-namespaces"
+alias kgsa "kubectl get service --all-namespaces"
+alias kgsaa "kubectl get serviceaccount --all-namespaces"
+alias kghpaa "kubectl get hpa --all-namespaces"
+alias kgsca "kubectl get secrets --all-namespaces"
+alias kgcma "kubectl get configmaps --all-namespaces"
+alias kgia "kubectl get ingress --all-namespaces"
+
+# watch aliases
+alias wkgp "watch kubectl get pods"
+alias wkgpa "watch kubectl get pods --all-namespaces"
+alias wkga "watch kubectl get all"
+alias wkgaa "watch kubectl get all --all-namespaces"
+alias wktp "watch kubectl top pods"
+alias wktpa "watch kubectl top pods --all-namespaces"
+alias wktn "watch kubectl top nodes"
+
+alias kc "kubectx"
+alias kn "kubens"

@@ -1,0 +1,7 @@
+# Preserve user environment when running command
+sudo -E <cmd>
+
+# Sudo likes to stop working after a while, fix it with this
+# https://bbs.archlinux.org/viewtopic.php?id=262600
+faillock --reset
+

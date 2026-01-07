@@ -1,0 +1,50 @@
+
+# List all VMs
+virsh list --all
+
+# Start a VM
+virsh start myvm
+
+# Stop a VM (graceful shutdown)
+virsh shutdown myvm
+
+# Force stop
+virsh destroy myvm
+
+# Delete a VM (keeps disk)
+virsh undefine myvm
+
+# Delete VM and its storage
+virsh undefine myvm --remove-all-storage
+
+# Connect to VM console
+virsh console myvm
+
+# Get VM info
+virsh dominfo myvm
+
+# Clone a VM
+virt-clone --original myvm --name myvm-clone --auto-clone
+
+# Take a snapshot
+virsh snapshot-create-as myvm snapshot1 "My first snapshot"
+
+# List snapshots
+virsh snapshot-list myvm
+
+# Restore snapshot
+virsh snapshot-revert myvm snapshot1
+
+# List networks
+virsh net-list --all
+
+# Start default network
+virsh net-start default
+
+# Enable autostart
+virsh net-autostart default
+
+virsh net-define mynet.xml
+virsh net-start mynet
+virsh net-autostart mynet
+

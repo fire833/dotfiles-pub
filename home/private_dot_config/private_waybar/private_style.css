@@ -1,0 +1,100 @@
+/*
+*	Copyright (C) 2026 Kendall Tauser
+*
+*	This program is free software; you can redistribute it and/or modify
+*	it under the terms of the GNU General Public License as published by
+*	the Free Software Foundation; either version 2 of the License, or
+*	(at your option) any later version.
+*
+*	This program is distributed in the hope that it will be useful,
+*	but WITHOUT ANY WARRANTY; without even the implied warranty of
+*	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*	GNU General Public License for more details.
+*
+*	You should have received a copy of the GNU General Public License along
+*	with this program; if not, write to the Free Software Foundation, Inc.,
+*	51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+
+/*
+Color theme: https://coolors.co/ab936e-4a4b4f-1d1b18-29201a-191814-262f3e-12110b-d2c1b2-785328-b6a79b
+*/
+
+@define-color main-font #D2C1B2;
+@define-color backup-font #AB936E;
+@define-color dark-font #151A28;
+@define-color background-1 #151A26;
+@define-color background-2 #262F3E;
+@define-color background-3 #182132;
+@define-color foreground-1 #454240;
+@define-color foreground-2 #7A6B5B;
+@define-color foreground-3 #29201A;
+@define-color foreground-4 #B6A79B;
+@define-color red #C52233;
+@define-color green #003E1F;
+@define-color blue #2B4360;
+@define-color yellow #EAE151;
+@define-color aqua #6DD6DA;
+
+* {
+    font-size: 15px;
+    font-family: JetBrainsMono;
+    transition: all 0.2s ease-in-out;
+    color: @main-font;
+}
+
+window#waybar {
+    border-radius: 5px;
+    min-height: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 2px;
+    border: 0px;
+    background: linear-gradient(to right, @background-1, @background-2, @background-3);
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#pulseaudio,
+#temperature,
+#custom-weather,
+#backlight,
+#workspaces {
+    padding: 2px 6px 2px 6px;
+    border-radius: 8px;
+    margin: 5px;
+    background: @foreground-1;
+}
+
+#workspaces button {
+    padding: 0px 2px 0px 2px;
+}
+
+#workspaces button:hover {
+    padding: 0px 2px 0px 2px;
+    background: @foreground-2;
+    color: @dark-font;
+}
+
+#workspaces button.active {
+    padding: 0px 2px 0px 2px;
+    color: @dark-font;
+    background: @foreground-4;
+}
+
+#clock:hover, 
+#battery:hover,
+#cpu:hover,
+#pulseaudio:hover,
+#temperature:hover,
+#custom-weather:hover,
+#backlight:hover,
+#memory:hover {
+    padding: 2px 6px 2px 6px;
+    border-radius: 8px;
+    margin: 5px;
+    background: @foreground-2;
+    color: @dark-font;
+}

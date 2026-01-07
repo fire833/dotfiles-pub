@@ -1,0 +1,10 @@
+# Global git ignore patterns
+~/.aws/credentials
+~/.kube/config
+~/.cache
+~/.gnupg
+~/.pulumi/credentials.json
+~/.ssh/*.key
+~/videos
+~/sites
+

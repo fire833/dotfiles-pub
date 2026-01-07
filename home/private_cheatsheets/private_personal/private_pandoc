@@ -1,0 +1,4 @@
+
+# Set a smaller than default margin when generating pdfs from markdown. 
+pandoc -V geometry:margin=1in -o output.pdf input.md
+

@@ -1,0 +1,28 @@
+
+# mdadm allows you to create RAID arrays with block devices. 
+
+mdadm 
+
+# mkfs allows you to create filesystems on top of a block device.
+
+mkfs.<fs>
+
+# fdisk allows you to update the partition tables for block devices.
+
+fdisk
+
+# parted is another tool to update partition tables on disks.
+
+parted
+
+# cryptsetup allows you to configure LUKS on block devices.
+
+cryptsetup
+
+## LVM management stuff.
+
+# pv<create|display|resize|s|remove|...> is for managing physical volumes with your system.
+
+# vg<create|diaply|remove|...> is for managing volume groups within your system.
+
+# lv<create|extend|remove|display> is for managing logical volumes that are built from volume groups.

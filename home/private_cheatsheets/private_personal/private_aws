@@ -1,0 +1,40 @@
+
+# Exporting access keys for aws CLi to use/pick up:
+
+export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+
+# updating kubeconfig to include EKS cluster:
+aws eks update-kubeconfig --region region-code --name my-cluster
+
+# Logging into AWS with CLI via SSO.
+aws sso login --sso-session <session>
+
+# Get an ECR token
+aws ecr get-login-password --region <region> | buildah login --username AWS --password-stdin <account-id>.dkr.ecr.<region>.amazonaws.com
+
+# IAM Service Principals List
+https://gist.github.com/shortjared/4c1e3fe52bdfa47522cfe5b41e5d6f22
+
+# Quotas
+
+# IAM (https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html)
+| Resource | Default Quota | Max Quota |
+|----------|---------------|-----------|
+| Customer managed policies per account | 1500 | 5000 |
+| Groups per account | 300 | 500 |
+| Instance profiles per account	| 1000 | 5000 |
+| Managed policies per role	| 10 | 20 |
+| Managed policies per user	| 10 | 20 |
+| Role trust policy length | 2048 chars | 4096 chars |
+| Roles per account	| 1000 | 5000 |
+| Server certificates per account | 20 | 1000 |
+
+# VPC Stuff (https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html)
+
+# CodePipeline Actions reference (https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-valid-providers.html)
+
+# Route 53 Endpoints pricing: https://aws.amazon.com/route53/pricing/
+
+# If you need to update a Cloudfront Distribution in the CLI.
+https://stackoverflow.com/questions/42624579/update-cloudfront-configuration-using-awscli

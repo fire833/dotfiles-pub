@@ -1,0 +1,14 @@
+
+# Managing IP addresses, routes, neighbors, etc.
+
+# Delete default route
+
+ip route del default via <gateway IP>
+
+# Add default route
+
+ip route add default via <gateway IP>
+
+# Add an IP address to an interface
+
+ip addr add <address>/<subnet> dev <device>

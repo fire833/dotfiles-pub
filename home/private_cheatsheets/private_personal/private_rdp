@@ -1,0 +1,7 @@
+
+# RDP to a remote Windows instance
+xfreerdp /u:<user> /p:<password(optional)> /v:<server>[:port] /size:1920x1080
+
+# Connect to a VNC server
+vncviewer -SecurityTypes <security> <host>[:port]
+

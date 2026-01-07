@@ -1,0 +1,7 @@
+
+# Get clang to emit llvm-ir
+clang -cc1 foo.c -emit-llvm
+
+# Compile LLVM IR files
+llc foo.ll
+

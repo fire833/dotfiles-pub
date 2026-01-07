@@ -1,0 +1,66 @@
+
+# /boot
+
+This partition consists of the Android kernel and the ramdisk. Basically, every single thing 
+that is needed to boot your Android device when powered on. You should only proceed to wipe 
+this partition from recovery if it is absolutely necessary. If you do, once the partition is 
+wiped, ensure to reboot the phone only after installing a new boot partition. The new 
+partition can be a /boot partition found in a ROM.
+
+# /system
+
+The system partition accommodates the entire Android OS. This includes the Android GUI as well 
+as the system apps that come pre-installed on Android devices. So, what happens if you wipe 
+this partition? Well, you can still boot the device. We will only be able to put our device 
+into recovery or bootloader mode.
+
+# /recovery
+
+This partition is designed for backup and can be considered the alternative boot option or 
+partition in an Android device. It lets the device boot into recovery mode, where backing up 
+data, wiping data, restoring the phone to factory settings, and performing other maintenance 
+operations.
+
+# /data
+
+Also known as user data partition, this partition consists of all of the user’s data, including 
+contacts, settings, apps, and messages. Wiping the data partition will lead to storing your 
+phone in factory settings, having removed all of the apps, messages, and user settings from 
+the Android device.
+
+# /cache
+
+This partition stores the frequently accessed app data and components. Wiping this partition 
+will clear the built-up cache, and the device will simply go back to rebuilding it as you 
+continue using it. Clearing the cache also frees up some space in your device and can also fix 
+certain issues at times.
+
+# /misc
+
+This partition contains all the miscellaneous system settings, usually on/off switches. The 
+settings may include carrier or region ID, USB configuration, and certain hardware settings. 
+This partition is very important since it can cause several device features to malfunction if 
+the partition becomes corrupt or goes missing. A missing /misc partition can also cause the 
+Android device not to boot at all.
+
+# /sdcard
+
+This partition is the space that is available to users to store their files and data. Depending 
+on your device, you could have more than one sdcard partition. If your device has an external 
+SD card slot, then the /sdcard partition refers to the internal storage device, and the external 
+SD card will be assigned a different partition, either a new partition called /sdcard2 or a 
+separate directory within the /sdcard partition itself such as /sdcard/sd. Wiping the partition 
+with the external SID card storage is completely safe as long as you have backed up any important 
+data or documents you may have on it. Wiping the /sdcard partition with the external SD and 
+storage is completely safe, as long as you have backed up any important data or documents you may 
+have on it. Wiping the /sdcard partition, however, results in wiping some system and app data and 
+settings, but it still doesn’t hinder the system’s boot processor functionality.
+
+# /sd-ext
+
+This is an additional partition of the sdcard partition, which is only present on some devices, 
+typically ones that have custom ROMS or mods on them. It can usually be used with certain ROMS 
+that have special features such as APP2SD+ or data2ext enabled. This is essentially a /data 
+partition of the /sdcard and stores some user data and settings that are typically stored on the 
+/data partition. This is useful for devices with limited internal memory.
+

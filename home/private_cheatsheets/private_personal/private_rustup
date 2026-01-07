@@ -1,0 +1,10 @@
+
+# Install latest stable toolchain
+rustup update stable
+
+# list toolchains
+rustup toolchain list
+
+# Install/update a specific toolchain
+rustup toolchain install <name, usually stable or nightly>
+

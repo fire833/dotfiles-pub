@@ -1,0 +1,55 @@
+
+# Copyright (C) 2026 Kendall Tauser
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program; if not, write to the Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+# https://lukesmith.xyz/rss.xml
+
+# Tech
+https://hnrss.org/frontpage "tech"
+https://www.archlinux.org/feeds/news/ "tech"
+https://aws.amazon.com/blogs/aws/feed/ "tech" "AWS"
+https://engineering.fb.com/feed/ "tech" "facebook" "meta"
+
+# Finance
+https://www.investopedia.com/feedbuilder/feed/getfeed?feedName=rss_headline "~Investopedia News" "finance"
+https://www.gnucash.org/atom.php "~Gnucash News" "finance"
+
+# Work
+#https://found.statuspage.io/history.rss "~Elastic Cloud Uptime" "work"
+
+# Games
+https://www.factorio.com/blog/rss "games" "factorio"
+
+# Statuses
+https://metastatuspage.com/history.rss "status"
+https://status.incident.io/feed.rss "status"
+https://status.hashicorp.com/feed.rss "status"
+https://status.flyio.net/history.rss "status"
+https://status.gitlab.com/pages/5b36dc6502d06804c08349f7/rss "status"
+https://www.githubstatus.com/history.rss "status"
+https://www.notion-status.com/history.rss "status"
+https://www.vercel-status.com/history.rss "status"
+https://status.backblaze.com/data/rss.xml "status"
+https://status.sentry.io/history.rss "status"
+https://discordstatus.com/history.rss "status"
+https://status.tailscale.com/feed.rss "status"
+https://status.twilio.com/history.rss "status"
+https://feeds.feedburner.com/OktaStatusRSS "status"
+https://jira-software.status.atlassian.com/history.rss "status"
+https://confluence.status.atlassian.com/history.rss "status"
+https://bitbucket.status.atlassian.com/history.rss "status"
+https://trello.status.atlassian.com/history.rss "status"
+https://opsgenie.status.atlassian.com/history.rss "status"

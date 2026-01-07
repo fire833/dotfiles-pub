@@ -1,0 +1,4 @@
+
+# Compiling with pdflatex
+pdflatex <.tex file> -o <custom pdf>
+

@@ -1,0 +1,44 @@
+#!/usr/bin/env python
+
+import requests
+import json
+import sys
+
+locations = {
+	"seattle": [47.617040, -122.351319],
+	"norman": [35.205461, -97.442350],
+	"houston": [29.756589, -95.363297],
+	"dallas": [32.781630, -96.795611],
+	"anchorage": [61.174126, -149.962954],
+	"la": [33.995634, -118.243089],
+	"nyc": [40.712757, -74.012960],
+	"dc": [38.889756, -77.034473],
+	"boston": [42.362990, -71.008344],
+	"buffalo": [42.872816, -78.868128],
+	"chicago": [41.880910, -87.633348],
+	"austin": [30.273123, -97.741489],
+	"santonio": [29.425670, -98.485810],
+}
+
+def get_weather(location: str):
+	if locations[location]:
+		loc = requests.get(f"https://api.weather.gov/points/{locations[location][0]},{locations[location][1]}")
+		if loc.status_code == 200:
+			locjson = json.loads(loc.text)
+			weather = requests.get(locjson["properties"]["forecastHourly"])
+			if weather.status_code == 200:
+				wjson = json.loads(weather.text)
+				currForecast = wjson["properties"]["periods"][0]
+				temp = currForecast["temperature"]
+				units = currForecast["temperatureUnit"]
+				wind = currForecast["windSpeed"]
+				wind = wind.rstrip(" mph")
+				windDir = currForecast["windDirection"]
+
+				print(f"{temp}{units} {wind}{windDir}")	
+
+if __name__ == "__main__":
+	loc = "norman"
+	if len(sys.argv) > 2:
+		loc = sys.argv[1]
+	get_weather(loc)

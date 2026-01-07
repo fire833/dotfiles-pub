@@ -1,0 +1,172 @@
+
+## Useful radio frequencies
+
+### NOAA Broadcast frequencies
+162.400 MHz
+162.425 MHz
+162.450 MHz
+162.475 MHz
+162.500 MHz
+162.525 MHz
+162.550 MHz
+
+### NOAA Satellite Frequencies
+NOAA 15 - 137.6200 MHz
+NOAA 18 - 137.9125 MHz
+NOAA 19 - 137.1000 MHz
+
+### ISS
+
+Mode V APRS (Worldwide APRS Digipeater) Most common operating mode.
+- Uplink	145.825 MHz FM 1200 BPS Packet
+- Downlink	145.825 MHz FM 1200 BPS Packet
+
+Mode U APRS (Worldwide APRS Digipeater) Rarely used.
+- Uplink	437.550 MHz FM 1200 BPS Packet
+- Downlink	437.550 MHz FM 1200 BPS Packet
+
+Mode V/V Crew Contact (Regions 2 & 3) Rarely used.
+- Uplink	144.490 MHz FM
+- Downlink	145.800 MHz FM
+
+Mode V/V Crew Contact (Region 1) Rarely used.
+- Uplink	145.200 MHz FM
+- Downlink	145.800 MHz FM
+
+Mode V/U FM Voice Repeater Worldwide
+- Uplink	145.990 MHz FM
+- Downlink	437.800 MHz FM
+
+Mode V SSTV Imaging  Ocassionally used.
+- Downlink	145.800 MHz FM
+
+### AIS (Vessel Reporting)
+
+161.975 MHz
+162.025 MHz
+
+### Airports
+
+# KOKC
+119.350	BM 	CSQ WRWA Tower 	Will Rogers Airport -- Tower 	AM 	Aircraft
+120.250	BM 	CSQ WRWA Tower 2 	Will Rogers Airport -- Tower Backup 	AM 	Aircraft
+121.900	BM 	CSQ WRWA Ground 	Will Rogers Airport -- Ground 	AM 	Aircraft
+119.300	BM 	CSQ WRWA FinalAproch 	Will Rogers Airport -- Final Approach 	AM 	Aircraft
+118.950	BM 	CSQ WRWA Approach 	Will Rogers Airport -- Approach -- Switched Emergency Aircraft to this frequency during inflight emergency 	AM 	Aircraft
+120.450	BM 	CSQ WRWA Approach 	Will Rogers Airport -- Approach/Departure (081° to 170°) -- Southeast 	AM 	Aircraft
+124.200	BM 	CSQ WRWA Approach 	Will Rogers Airport -- Approach/Departure (001° to 080°) -- Northeast 	AM 	Aircraft
+124.600	BM 	CSQ WRWA Approach 	Will Rogers Airport -- Approach/Departure (171° to 360°) -- West 	AM 	Aircraft
+124.350	BM 	CSQ WRWA Clearance 	Will Rogers Airport -- Clearance Delivery 	AM 	Aircraft
+125.850	B 	CSQ WRWA ATIS 	Will Rogers Airport -- Automatic Terminal Information Service (ATIS) 	AM 	Aircraft
+
+269.450	BM 	CSQ WRWA Tower 	Will Rogers Airport -- Tower 	AM 	Aircraft
+348.600	BM 	CSQ WRWA Ground 	Will Rogers Airport -- Ground 	AM 	Aircraft
+381.450	BM 	CSQ WRWA FinalAproch 	Will Rogers Airport -- Final Approach 	AM 	Aircraft
+263.075	BM 	CSQ WRWA Approach 	Will Rogers Airport -- Approach/Departure -- West (171 to 360) 	AM 	Aircraft
+266.800	BM 	CSQ WRWA Approach 	Will Rogers Airport -- Approach/Departure -- West (171 to 360) 	AM 	Aircraft
+288.325	BM 	CSQ WRWA Approach 	Will Rogers Airport -- Approach/Departure -- Southeast (081 to 170) AM 	Aircraft
+336.400	BM 	CSQ WRWA Approach 	Will Rogers Airport -- Approach/Departure -- Northeast (001 to 080) AM 	Aircraft
+
+# KHOU
+
+124.600	B 	CSQ ATIS 	Automatic Terminal Information Service (ATIS) 	AM 	Aircraft
+125.450	BM 	CSQ Clearance 	Clearance Delivery 	AM 	Aircraft
+121.900	BM 	CSQ Ground 	Ground 	AM 	Aircraft
+120.200	BM 	CSQ Tower Emerg 	Tower - Emergency 	AM 	Aircraft
+120.950	BM 	CSQ Tower Heli 	Tower - Helicopters 	AM 	Aircraft
+118.700	BM 	CSQ Tower Main 	Tower - Main 	AM 	Aircraft
+
+# KIAH
+
+120.725	BM 	CSQ	Tower 8L/26R 	Tower (Runway 8L/26R) 	AM 	Aircraft
+125.350	BM 	CSQ	Tower 8R/26L 	Tower (Runway 8R/26L) 	AM 	Aircraft
+135.150	BM 	CSQ	Tower 9/27 	Tower (Runway 9/27) 	AM 	Aircraft
+127.300	BM 	CSQ	Tower 15/33 	Tower (Runways 15L/33R, 15R/33L) 	AM 	Aircraft
+288.250	BM 	CSQ	Tower UHF West 	Tower UHF (Runways 15L/33R, 15R/33L) 	AM 	Aircraft
+290.200	BM 	CSQ	Tower UHF East 	Tower UHF (Runways 8L/26R, 8R/26L, 9/27) 	AM 	Aircraft
+135.625	BM 	CSQ	Tower Emergency 	Tower Emergency 	AM 	Aircraft
+121.700	BM 	CSQ	Ground West 	Ground (Runways 15L/33R, 15R/33L) 	AM 	Aircraft
+118.575	BM 	CSQ	Ground North 	Ground (Runways 8L/26R, 8R/26L, 9/27) 	AM 	Aircraft
+119.950	BM 	CSQ	Ground South 	Ground (Runways 9/27) and Metering 	AM 	Aircraft
+130.825	KUB5 BM	CSQ 	Ramp Ctrl North 	Ramp Control North (Terminal C North and Terminal D) 	AM 	Aircraft
+131.275	KUB5 BM	CSQ 	Ramp Ctrl South 	Ramp Control South (Terminal C South and Terminal E) 	AM 	Aircraft
+121.625	WQBR666	BM 	CSQ 	Ramp Ctrl West 	Ramp Control West (Terminals A and B) 	AM 	Aircraft
+130.300	WPO8 BM	CSQ 	Ramp Ctrl 130.3 	Ramp Control (back-up) 	AM 	Aircraft
+128.100	BM 	CSQ	Clearance 	Clearance Delivery 	AM 	Aircraft
+122.400	BM 	CSQ	FSS 	Flight Service Station (FSS) 	AM 	Aircraft
+124.050	B 	CSQ	ATIS Main 	Automatic Terminal Information Service (ATIS) - Main 	AM 	Aircraft
+126.225	B 	CSQ	ATIS Constrction 	Automatic Terminal Information Service (ATIS) - Construction 	AM 	Aircraft
+125.300	BM 	CSQ	IAH 125.3 	As Assigned 	AM 	Aircraft
+119.825	BM 	CSQ	IAH 119.825 	As Assigned 	AM 	Aircraft
+
+### FRS Frequencies
+
+Channel No.	Frequency	Power (ERP in Watts)
+1	462.5625	2 W
+2	462.5875	2 W
+3	462.6125	2 W
+4	462.6375	2 W
+5	462.6625	2 W
+6	462.6875	2 W
+7	462.7125	2 W
+8	467.5625	0.5 W
+9	467.5875	0.5 W
+10	467.6125	0.5 W
+11	467.6375	0.5 W
+12	467.6625	0.5 W
+13	467.6875	0.5 W
+14	467.7125	0.5 W
+15	462.5500	2 W
+16	462.5750	2 W
+17	462.6000	2 W
+18	462.6250	2 W
+19	462.6500	2 W
+20	462.6750	2 W
+21	462.7000	2 W
+22	462.7250	2 W
+
+# Citizens Band Radio Service (CB)
+- CB service allows two-way radio communications.
+- CB service operates on 40 shared channels on a "take-turns" basis, meaning no CB channel is assigned to any specific individual or organization. Users must never talk with another station for more than 5 minutes continuously, and must wait at least one minute before starting another communication on the same channel.
+- CB equipment used in the United States must be FCC-certified and labeled as such by the manufacturer.
+- You may not raise the power output of your CB unit, attach any type of power amplifier or modify the unit internally. The maximum authorized power levels vary depending on whether the station is transmitting a single side band (up to twelve watts Peak Envelope Power or PEP) or an AM signal (up to four watts PEP).
+
+# Family Radio Service (FRS)
+- FRS allows two-way voice communications over short distances (generally less than one-half mile on the 0.5 watt channels and up to two miles on the 2 watt channels, depending on conditions).
+- An FRS unit looks and works much like a walkie-talkie.
+- There are older, dual-use, FRS-General Mobile Radio Service (GMRS) units, but you may legally use only the FRS channels unless you have a GMRS license. The label on the unit or the operations manual should indicate the service the unit is certified for. FRS-only units transmit at lower power levels and have antennas that are integrated with the unit; GMRS units transmit at higher power levels and may have detachable antennas. Note that dual use FRS-GMRS radios may no longer be sold.
+- You can operate your FRS unit anywhere in the U.S. and its possessions.
+
+# General Mobile Radio Service (GMRS)
+- GMRS is a land-mobile radio service available for short-distance, two-way communications.
+- A GMRS system may legally be operated only with an FCC license. The individual licensee is responsible for the proper operation of the GMRS system. A licensee may permit his or her immediate family members to operate the GMRS system.
+- A GMRS system is made up of station operators and a mobile station consisting of one or more mobile units. It may also include one or more land stations. Some land stations operate as repeaters, thereby extending the range of GMRS mobile units.
+- New GMRS licenses are granted only to individuals, but GMRS licenses granted to non-individuals (such as businesses) before July 31, 1987, can be renewed if certain conditions are met. You can apply for a GMRS license online, or by filing FCC Form 605. The FCC sets license filing fees annually, and licenses are granted for 10 years.
+
+# Low Power Radio Service (LPRS)
+- LPRS is a private, one-way short-distance communication service that allows stations to transmit voice data or signals for auditory assistance to people with disabilities, people who require language translation, and certain individuals in educational settings. LPRS also allows stations to transmit voice, data, or tracking signals for health care-related communications and certain law enforcement activities. Two-way communications are prohibited. LPRS can also be used for network control communications in the Automated Marine Telecommunications System (AMTS).
+- LPRS transmitters can be operated anywhere in the United States.
+
+# Multi-Use Radio Service (MURS)
+- MURS is a private, two-way short-distance voice or data radio communications service.
+- The service operates on five VHF channels. MURS users must cooperate in using the five channels to reduce interference to other users. No user has priority over any other user, but all users must yield to emergency communications. A MURS station may not operate as a repeater station, including store-and-forward packet radio operation, or a signal booster.
+- Maximum allowable output power for a MURS unit is two watts. Transmission range between two hand-held units varies depending on the unit's antenna height, terrain and weather.
+
+# UHF - Ultra High Frequency (between 300 MHz and 3 GHz)
+UHF radio waves propagate mainly by line of sight; they are blocked by hills and large buildings although the transmission through building walls is strong enough for indoor reception. They are used for television broadcasting, cell phones, satellite communication including GPS, personal radio services including Wi-Fi and Bluetooth, walkie-talkies, cordless phones, and numerous other applications. The IEEE defines the UHF radar band as frequencies between 300 MHz and 1 GHz. Two other IEEE radar bands overlap the ITU UHF band: the L band between 1 and 2 GHz and the S band between 2 and 4 GHz. One of the biggest pros of UHF radios is that they do a much better job of penetrating barriers in urban locations, like concrete, steel, and wood. So this kind of radio is best suited for use indoors, including buildings with multiple floors, in industries such as manufacturing, distribution, education, retail, hospitality, and healthcare. They also work well for businesses that function in both indoor and outdoor settings, where there are a lot of surrounding buildings.
+
+# VHF - Very high frequency (from 30 MHz to 300 MHz)
+Frequencies immediately below VHF are denoted high frequency (HF), and the next higher frequencies are known as ultra high frequency (UHF). Common uses for VHF are FM radio broadcasting, television broadcasting, two way land mobile radio systems (emergency, business, private use and military), long range data communication up to several tens of kilometres with radio modems, amateur radio, and marine communications. Air traffic control communications and air navigation systems (e.g. VOR, DME & ILS) work at distances of 100 kilometres or more to aircraft at cruising altitude. VHF was used for analog television stations in the US, and continues to be used for digital television.
+
+# HF - High frequency (between 3 and 30 MHz)
+The HF band is a major part of the shortwave band of frequencies, so communication at these frequencies is often called shortwave radio. Because radio waves in this band can be reflected back to Earth by the ionosphere layer in the atmosphere – a method known as "skip" or "skywave" propagation – these frequencies are suitable for long-distance communication across intercontinental distances. The band is used by international shortwave broadcasting stations (2.310 - 25.820 MHz), aviation communication, government time stations, weather stations, amateur radio and citizens band services, among other uses.
+Now that you’re aware of the differences between HF, VHF and UHF radio, you can make an informed decision about which option is a better fit for your business needs. As you can see, each operational frequency comes with its own advantages and disadvantages. But overall, VHF radios are better for outdoor use in large areas, and UHF radios are better for indoor or outdoor settings that are in close proximity.
+
+Useful link about AX25: https://destevez.net/2016/06/kiss-hdlc-ax-25-and-friends/
+
+# Useful reference site
+https://www.radioreference.com/
+
+# Useful signals
+https://www.sigidwiki.com/wiki/
+

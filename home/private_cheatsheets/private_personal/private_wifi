@@ -1,0 +1,27 @@
+
+1. In case the wireless interface is already connected to some other AP, first disconnect it using
+
+# nmcli con down <AP name>
+
+Example: Supposing interface is already connected to 'PreviousAP', then disconnect it using
+
+# nmcli con down PreviousAP
+
+2. Now for Connecting to new AP
+
+Considering you know the AP name and password.
+
+# nmcli device wifi connect <AP name> password <password>
+
+Example: AP name: Connect-to-this. WPA/WPA2 PSK: iampassword123
+
+# nmcli device wifi connect Connect-to-this password iampassword123
+
+If you don't want to have the wireless password stored in your history in recent versions you can add --ask to have nmcli prompt you for missing information it needs (default behavior if password is not provided).
+
+This will automatically create a file in /etc/NetworkManager/system-connections/ with the AP name, which will contain the configuration.
+
+# ls /etc/NetworkManager/system-connections/Connect-to-this
+
+# Scan for wifi connections (I have a script in bashrc for this)
+wificheck <device>

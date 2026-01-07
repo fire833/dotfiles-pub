@@ -1,0 +1,31 @@
+
+# Pacman listing the packages that could be installed by yay. They are essentially just packages that were not installed by arch
+pacman -Qm
+
+# Update all package repos
+pacman -Syy
+
+pacman -U
+
+# Static pacman
+
+This is useful whenever you break pacman because some of the libraries it depends on are broken for whatever reason:
+
+wget https://github.com/chaitanyarahalkar/Pacman-Static/releases/download/v1.0.0/pacman-bins.tar.gz
+tar xvf pacman-bins.tar.gz
+./pacman-static <commands>
+
+# Update Postmordems
+
+- Upon updating my system on June 5th, 2024, or attempting to, this caused many breakages within my system. The core problem was a conflict with the icu package. 
+This resulted in me stupidly removing the icu package, but that is a runtime requirement for pacman, so I have a bootstrap issue now. I fooled around with copying over shared libraries from a live image to just get arch working, but that ended up being too messy, and had to remove them eventually to update the system when I got static pacman installed. 
+Once that collision issue was resolved, there was another issue with the update hooks located at /usr/share/libalpm/hooks. 
+These hooks all had Type = Path, when the internet told me I should update them to Type = File, which is what I have currently done, and that along with another live image load to reinstall and rebuild linux (to fix the EFI directory and allow me to actually boot) allowed me to get to a working system state.
+Upon the next system upgrade I need to make sure all the post transaction hooks actually run, and that may involve updating the files in that directory again to use Type = Path (I would assume this feature allows glob searching, while Type = File, one would assume only looks at a specific path when deciding to execute a hook). 
+An update will be posted here next time I upgrade in order to fully resolve whether my system is no longer bricked. NixOS should be considered as a long term replacement option as well.
+
+Resources : https://bbs.archlinux.org/viewtopic.php?id=253056 https://unix.stackexchange.com/questions/582023/pacman-hook-failed-to-run-transaction-hooks-error/591888 https://bbs.archlinux.org/viewtopic.php?id=251787
+
+- June 8th Update: After having updated my system, everything appears to work pre reboot. 
+I ended up looking at all hooks files that I edited around 11AM on June 5th, and switched those glob readers of Type = File back to Type = Path. 
+We'll see if everything is kosher after a reboot, and on next update.

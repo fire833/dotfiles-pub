@@ -1,0 +1,14 @@
+
+# How to exit a VM:
+Ctrl+Alt+2 or Ctrl+Alt+g
+
+# Creating a new qemu disk image. (QCOW2 format)
+qemu-img create -f qcow2 myVirtualDisk.qcow2 20G
+
+qemu-system-x86-64                    \
+    -enable-kvm                       \
+    -m 4G # Memory                    \
+    -smp 2 # CPUs                     \
+    -hda disk.qcow2 # Main hard drive \
+    -cdrom <iso> # Specify an ISO     \
+

@@ -1,0 +1,12 @@
+
+# To unlock a partition
+fastboot flashing unlock
+
+# To unlock "critical" partitions, still unsure what this does.
+fastboot flashing unlock-critical
+
+# To get a dump of all the bootloader info, run this
+fastboot getvar all
+# You may have run it a few times, the device I am testing on 
+# currently does not consistently do this correctly.
+

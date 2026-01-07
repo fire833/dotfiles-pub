@@ -1,0 +1,6 @@
+
+# Connection error: 425 Unable to build data connection: TLS session of data connection not resumed.
+https://forum.filezilla-project.org/viewtopic.php?t=56219
+
+It looks like this may be an issue that is client-side
+

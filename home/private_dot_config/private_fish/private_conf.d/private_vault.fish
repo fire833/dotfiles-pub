@@ -1,0 +1,53 @@
+#!/usr/bin/fish
+
+# Copyright (C) 2026 Kendall Tauser
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program; if not, write to the Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+# Vault aliases
+alias v "vault"
+alias vr "vault read"
+alias vl "vault list"
+alias vst "vault status"
+alias vli "vault login"
+alias vle "vault lease"
+alias vs "vault secrets"
+alias va "vault auth"
+alias vw "vault write"
+alias vd "vault delete"
+alias vk "vault kv"
+alias vp "vault policy"
+alias vls "vault leases"
+alias vm "vault monitor"
+
+# Vault secrets subcommands
+alias vse "vault secrets enable"
+alias vsd "vault secrets disable"
+alias vsl "vault secrets list"
+alias vsm "vault secrets move"
+alias vst "vault secrets tune"
+
+# Vault auth subcommands
+alias vae "vault auth enable"
+alias vad "vault auth disable"
+alias val "vault auth list"
+alias vam "vault auth move"
+alias vat "vault auth tune"
+
+# Vault policy subcommands
+alias vpl "vault policy list"
+alias vpr "vault policy read"
+alias vpw "vault policy write"
+alias vpd "vault policy delete"

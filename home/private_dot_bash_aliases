@@ -1,0 +1,288 @@
+#!/bin/bash
+
+# Copyright (C) 2026 Kendall Tauser
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program; if not, write to the Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+function aliask8s() {
+    [ -f ~/.config/bash/kubernetes_aliases ] && source ~/.config/bash/kubernetes_aliases
+}
+
+aliask8s
+
+function aliasaws() {
+    [ -f ~/.config/bash/aws_aliases ] && source ~/.config/bash/aws_aliases
+}
+
+aliasaws
+
+function aliasvault() {
+    [ -f ~/.config/bash/vault_aliases ] && source ~/.config/bash/vault_aliases
+}
+
+function aliasopenstack() {
+    [ -f ~/.config/bash/openstack_aliases ] && source ~/.config/bash/openstack_aliases
+}
+
+aliasopenstack
+
+# Other aliases
+alias ll="exa -la --git"
+alias l="exa"
+alias grep="grep --color=auto"
+alias ls="ls --color=auto"
+alias pgrep="ps aux | grep --color=auto"
+
+# Git aliases
+alias g="git"
+alias gc="git commit"
+alias gca="git commit --amend"
+alias gcan="git commit --amend --no-edit"
+alias ga="git add -A"
+alias gs="git status"
+alias gl="git log"
+alias glo="git log --oneline"
+alias grs="git reset --soft"
+alias grh="git reset --hard"
+alias grbi="git rebase -i"
+alias grba="git rebase --abort"
+alias grbs="git rebase --skip"
+alias grbc="git rebase --continue"
+alias gus="git restore --staged"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gb="git branch"
+alias gbv="git branch -v"
+alias gsh="git stash"
+alias gshp="git stash pop"
+alias gplo="git pull origin"
+alias gplk="git pull kt"
+alias gpso="git push origin"
+alias gpsk="git push kt"
+
+# Chezmoi aliases
+alias c="chezmoi"
+alias ca="chezmoi add"
+alias cg="chezmoi git --"
+alias ccd="chezmoi cd"
+alias cra="chezmoi re-add"
+
+# Cheat aliases
+alias ch="cheat"
+
+# Cargo aliases
+alias cri="cargo init"
+alias crr="cargo run"
+alias crb="cargo build"
+alias crbr="cargo build --release"
+alias crbn="cargo bench"
+alias crbnc="cargo benchcmp"
+
+alias ni="npm install"
+alias nu="npm update"
+alias np="npm prune"
+alias nvu="nvm use"
+alias nis="npm install --save"
+alias nus="npm update --save"
+alias nisd="npm install --save-dev"
+alias nusd="npm update --save-dev"
+
+# Systemctl aliases
+alias ss="systemctl status"
+if [ "$(id -u)" == "0" ]; then
+    alias sr="systemctl restart"
+    alias srl="systemctl reload"
+    alias sd="systemctl daemon-reload"
+    alias st="systemctl start"
+    alias sp="systemctl stop"
+else
+    alias sr="sudo systemctl restart"
+    alias srl="sudo systemctl reload"
+    alias sd="sudo systemctl daemon-reload"
+    alias st="sudo systemctl start"
+    alias sp="sudo systemctl stop"
+fi
+
+# Buildah aliases
+alias b="buildah"
+alias bi="buildah images"
+alias brmi="buildah rmi"
+alias brmif="buildah rmi -f"
+alias bpsh="buildah push"
+alias bbd="buildah bud"
+
+# Config aliases
+alias ch="sudo ~/.local/bin/conf home"
+alias cw="sudo ~/.local/bin/conf work"
+alias cw2="sudo ~/.local/bin/conf work2"
+alias cv="sudo ~/.local/bin/conf vpn"
+alias ccf="sudo ~/.local/bin/conf cf"
+alias cs="sudo ~/.local/bin/conf sooner"
+alias chv="sudo ~/.local/bin/conf hvpn"
+
+# Make aliases
+alias m="make"
+
+# cd aliases
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias .......="cd ../../../../../.."
+alias ........="cd ../../../../../../.."
+
+# curl aliases
+alias curlf="curl --write-out '@${HOME}/.config/curl/outputformat.txt'"
+
+# Codium aliases
+which codium >/dev/null 2>&1 && alias code=codium
+
+alias killf="kill -s SIGKILL"
+
+# This is a controversial one in my opinion, going to swap
+# out for now
+# alias gdb="gdb -tui"
+alias gdbt="gdb -tui"
+
+if [ "$(id -u)" == "0" ]; then
+    alias zt="zerotier-cli"
+    alias ztj="zerotier-cli join"
+    alias ztl="zerotier-cli leave"
+    alias ztln="zerotier-cli listnetworks"
+    alias ztlp="zerotier-cli listpeers"
+    alias zts="zerotier-cli status"
+else
+    alias zt="sudo zerotier-cli"
+    alias ztj="sudo zerotier-cli join"
+    alias ztl="sudo zerotier-cli leave"
+    alias ztln="sudo zerotier-cli listnetworks"
+    alias ztlp="sudo zerotier-cli listpeers"
+    alias zts="sudo zerotier-cli status"
+fi
+
+which fx >/dev/null 2>&1 || alias fx=felix
+
+# NetworkManagerCLI aliases
+alias nm="nmcli"
+alias nmc="nmcli c"
+alias nmcu="nmcli c up"
+alias nmcd="nmcli c down"
+alias nmcs="nmcli c show"
+alias nmds="nmcli d show"
+alias nmcuhv="nmcli c up hvpn --ask"
+alias nmcdhv="nmcli c down hvpn"
+alias nmcuov="nmcli c up ouvpn --ask"
+alias nmcdov="nmcli c down ouvpn"
+alias nmcuwv="nmcli c up wvpn --ask"
+alias nmcdwv="nmcli c down wvpn"
+
+# B2 aliases
+alias b2="bbb2"
+alias b2aa="bbb2 authorize-account"
+alias b2ca="bbb2 clear-account"
+alias b2cap="bbb2 clear-account --profile"
+alias b2di="bbb2 download-file-by-id"
+alias b2dip="bbb2 download-file-by-id --profile"
+alias b2dn="bbb2 download-file-by-name"
+alias b2dnp="bbb2 download-file-by-name --profile"
+alias b2s="bbb2 sync"
+alias b2sp="bbb2 sync --profile"
+alias b2ga="bbb2 get-account-info"
+alias b2gap="bbb2 get-account info --profile"
+
+# podman-compose aliases
+alias pc="podman-compose"
+alias pcu="podman-compose up"
+alias pcr="podman-compose run"
+alias pcd="podman-compose down"
+alias pcdf="podman compose down -t0 --remove-orphans"
+
+# ykman aliases
+alias ykm="ykman"
+alias ykmc="ykman oath accounts code"
+alias ykml="ykman oath accounts list"
+
+# qemu aliases
+alias qsx="qemu-system-x86_64"
+alias qsa="qemu-system-arm"
+alias qimg="qemu-img"
+
+function crawl() {
+    wget -r -p -U mozilla -E -e robots=off --random-wait -np --limit-rate 1M $1 
+}
+
+function wificheck() {
+	sudo iw dev $1 scan | grep SSID
+}
+
+function ytdl() {
+    yt-dlp -v -f "bv*[height<=1080][ext=mp4]+ba*[ext=m4a]" -N 4 $1
+}
+
+# Download videos as mp3 audio
+function ytdla() {
+    yt-dlp -v -f "ba" -x --audio-format mp3 -N 4 $1
+}
+
+function gconfw() {
+    git config user.name 'Kendall Tauser'
+    git config user.email 'kendall@allpaid.com'
+}
+
+function setwin() {
+    i3-msg 'workspace 10; exec keepassxc; exec bash -c "yubiauth"'
+}
+
+# Export an env var without printing stuff to stdout
+function setsilent() {
+    echo "Provide the string for var $1: "
+    read value
+
+    export $1=$value
+}
+
+# Add this crap for gnucash to output graphics correctly
+# https://superuser.com/questions/1810879/gnucash-4-8-not-displaying-reports
+alias gnucash="WEBKIT_DISABLE_COMPOSITING_MODE=1 gnucash"
+
+function setvaultok() {
+    setsilent VAULT_TOKEN
+}
+
+function setpulumipw() {
+    setsilent PULUMI_CONFIG_PASSPHRASE
+}
+
+# Used for configuring the lab setup with an external
+# monitor to the left of my main monitor and making it the primary.
+function setuplab() {
+    xrandr --output DP-1-2 --primary --auto --left-of eDP-1
+    polybar-msg cmd restart
+}
+
+function setupsteam() {
+    sudo mount /dev/hdds/steamstore /home/fire833/.local/share/Steam
+}
+
+function clearenv() {
+    unset VAULT_TOKEN
+    unset PULUMI_CONFIG_PASSPHRASE
+    unset KUBECONFIG
+    unset AWS_PROFILE
+    unset AWS_ACCESS_KEY_ID
+    unset AWS_SECRET_ACCESS_KEY
+    unset AWS_SESSION_TOKEN
+}

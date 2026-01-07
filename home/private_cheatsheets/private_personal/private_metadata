@@ -1,0 +1,10 @@
+
+# Extract medatata from a pdf
+pdfinfo <filename>
+
+# Extract image metadata (imagemagick)
+identify -verbose <filename>
+
+# Remove all metadata from an image (imagemagick)
+mogrify -strip <filename>
+

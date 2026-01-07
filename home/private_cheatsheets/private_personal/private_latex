@@ -1,0 +1,19 @@
+
+# Writing the special sets numbers
+$\mathbb{R}$ # Specify the letter of the set, R for reals, C for complex, I for irrationals (or imaginary), Q for rationals, Z for integers, etc.
+
+# Move an item over to the side
+$\begin{adjustwidth}{<specify shift (usually cm)>}{} \end{adjustwidth}$
+
+# Capital PI product
+$\prod$
+
+# Capital sigma summation
+$\sum$
+
+# Partial derivatives
+$\frac{\partial Q}{\partial t}$
+
+# Limits (specify bound in lower parentheses)
+$\lim_{x\to\infty}$
+

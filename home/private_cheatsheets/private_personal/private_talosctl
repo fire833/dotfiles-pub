@@ -1,0 +1,7 @@
+
+# On occasion, one may need to recover the secrets or machine config from a running cluster. This can be done with the following
+talosctl get mc | yq .spec > config.yaml
+
+# One can then run the following to extract secrets bundle from config
+talosctl gen secrets --from-controlplane-config config.yaml
+

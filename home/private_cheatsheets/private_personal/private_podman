@@ -1,0 +1,13 @@
+
+# When podman is not running correctly, try these things.
+
+# If podman's complaining about the root mount, you can set root mount to be shared with:
+sudo mount --make-rshared /
+
+# When podman complains about not being able to set user namespace, this issue solves it:
+https://github.com/containers/podman/issues/10135#issuecomment-827742957
+
+Simply run:
+rm -r /tmp/podman-run-1000/
+rm -r /tmp/run-1000/
+

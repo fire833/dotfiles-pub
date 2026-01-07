@@ -1,0 +1,147 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 25,
+
+    // Gaps between modules (4px)
+    "spacing": 5, 
+
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/workspaces", 
+        "tray"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "backlight", 
+        "battery", 
+        "pulseaudio", 
+        "cpu", 
+        "temperature", 
+        "memory", 
+        "custom/weather"
+    ],
+
+    // Configure workspaces
+    "hyprland/workspaces": {
+        "format": "{id}",
+        "sort-by": "number"
+    },
+
+    // CPU module
+    "cpu": {
+        "interval": 5,
+        "tooltip": true,
+        "format": "{usage}% ({avg_frequency:.2f} GHz)"
+    },
+
+    // Memory module
+    "memory": {
+        "interval": 5,
+        "tooltip": true,
+        "tooltip-format": "{percentage}% mem used\n{swapPercentage}% swap used",
+        "format": "{used:.2f}G/{avail:.2f}G"
+    },
+    
+    // Time module
+    "clock": {
+        "timezone": "America/Chicago",
+        "format": "{:%a %b %d %T}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "interval": 1
+    },
+
+    // Tray applications
+    "tray": {
+        "icon-size": 25,
+        "spacing": 10
+    },
+
+    // Set backlight on systems with a backlight.
+    "backlight": {
+        "format": "{percent}%"
+    },
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}C"
+    },
+
+    // Battery junk for laptops
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        "format-full": "{capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "custom/weather": {
+        "exec": "polyweather",
+        "interval": 3600,
+        "format": "{text}",
+        "return-type": "text"
+    },
+
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    }
+}

@@ -1,0 +1,60 @@
+
+# Yum package manager helpful tips and commands
+
+# List all versions of a package
+yum list <package> --showduplicates
+
+# List all versions of package found within the STOP repos
+yum list <package> --showduplicates --enablerepo=STOP*
+
+# Clear out all old data and clean up indexes
+yum clean all --enablerepo=STOP*
+
+# Update a package to a specific version
+yum update <package>-<version> --enablerepo=STOP*
+
+# Update package to latest version
+yum update <package>
+
+# List the files installed by a package
+rpm -ql[p] <package>[.rpm] 
+
+NOTE: If you want to see what files are installed in an actual RPM file, 
+use -p and specify the filename, otherwise will check for an installed package.
+
+# List all installed rpms on the system
+rpm -qa [| grep <package>]
+
+# Find a package that installs/manages a specific file/directory on the host
+rpm -q --whatprovides <filename>
+
+# apt hold a package from being updated
+apt-mark hold <package name>
+
+# apt unhold a package to continue updating
+apt-mark unhold <package name>
+
+# list all files managed by the provided package on apt-based systems
+dpkg -L <package name>
+
+# list the history of all yum operations
+yum history
+
+# list the inode information about a file including the modification timestamps
+stat <file>
+
+# check login history
+last
+
+# check current logins
+w
+
+# show all versions of a package on debian systems
+apt-cache show linux-image
+
+# Show the size of all installed packages
+dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n
+
+# Show which package owns a file
+dpkg-query -S ${file}
+

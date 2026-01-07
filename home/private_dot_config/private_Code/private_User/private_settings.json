@@ -1,0 +1,299 @@
+
+// Copyright (C) 2026 Kendall Tauser
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 2 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License along
+// with this program; if not, write to the Free Software Foundation, Inc.,
+// 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+{
+    // Turn off telemetry crap
+    "redhat.telemetry.enabled": false,
+    "telemetry.telemetryLevel": "off",
+    "telemetry.enableTelemetry": false,
+    "intelephense.telemetry.enabled": false,
+
+    "yaml.maxItemsComputed": 30000,
+
+    // Language overrides
+    "[c]": {
+        "editor.formatOnSave": true,
+        "editor.detectIndentation": true,
+        "editor.insertSpaces": false,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.bracketPairColorization.enabled": true
+    },
+
+    "[cpp]": {
+        "editor.formatOnSave": true,
+        "editor.detectIndentation": true,
+        "editor.insertSpaces": false,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.bracketPairColorization.enabled": true
+    },
+
+    "[sql]": {
+
+    },
+
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit",
+            "source.fixAll": "never"
+        },
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.bracketPairColorization.enabled": true,
+    },
+    // Go configs
+    "go.coverageDecorator": {
+        "type": "gutter",
+        "coveredHighlightColor": "rgba(64,128,128,0.5)",
+        "uncoveredHighlightColor": "rgba(128,64,64,0.25)",
+        "coveredBorderColor": "rgba(64,128,128,0.5)",
+        "uncoveredBorderColor": "rgba(128,64,64,0.25)",
+        "coveredGutterStyle": "blockblue",
+        "uncoveredGutterStyle": "slashyellow"
+    },
+    "go.coverOnTestPackage": true,
+    "go.coverOnSingleTest": true,
+    "go.coverageOptions": "showBothCoveredAndUncoveredCode",
+    "go.useLanguageServer": true,
+    "gopls": {
+        "formatting.gofumpt": true
+    },
+
+    "[rust]": {
+        "editor.formatOnSave": true,
+        "editor.bracketPairColorization.enabled": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit",
+            "source.fixAll": "never"
+        },
+    },
+
+
+    "[javascript]": {
+        "editor.maxTokenizationLineLength": 2500,
+        "editor.formatOnSave": true,
+        "editor.detectIndentation": true,
+        "editor.insertSpaces": false,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit",
+            "source.fixAll": "never"
+        },
+        "editor.bracketPairColorization.enabled": true
+    },
+
+    "[typescript]": {
+        "editor.maxTokenizationLineLength": 2500,
+        "editor.formatOnSave": true,
+        "editor.detectIndentation": true,
+        "editor.insertSpaces": false,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit",
+            "source.fixAll": "never"
+        },
+        "editor.bracketPairColorization.enabled": true
+    },
+    // "eslint.format.enable": true,
+
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.detectIndentation": true,
+        "editor.insertSpaces": false,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.bracketPairColorization.enabled": true
+    },
+    "python.venvPath": "~/.cache/pypoetry/virtualenvs",
+
+    "[java]": {
+        "editor.formatOnSave": true,
+        "editor.detectIndentation": true,
+        "editor.insertSpaces": false,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.bracketPairColorization.enabled": true
+    },
+
+    "[dockerfile]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        }
+    },
+
+    "[makefile]": {
+    },
+
+    // Seriliazation languages configuration
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "keep",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml",
+        "editor.stopRenderingLineAfter": 500
+    },
+    "yaml.completion": true,
+
+    "[json]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace",
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+
+    "[svelte]": {
+        "editor.defaultFormatter": "svelte.svelte-vscode",
+        "editor.formatOnSave": true
+    },
+
+    "[cuda-cpp]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+        "editor.formatOnSave": true
+    },
+
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    
+    "diffEditor.ignoreTrimWhitespace": false,
+
+    // Workbench configs
+    "workbench.colorTheme": "Winter is Coming (Dark Black)",
+    "workbench.startupEditor": "none",
+    
+    // Config for remote stuff
+    "remote.autoForwardPorts": true,
+    "remote.SSH.configFile": "~/.ssh/config",
+
+    "remote.SSH.remotePlatform": {
+        "pi1.tauser.us": "linux"
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "eslint.validate": [
+        "javascript",
+        "typescript"
+    ],
+
+    "ansible.validation.enabled": false,
+
+    // Git configurations
+    "git.enabled": true,
+    "git.suggestSmartCommit": false,
+    "git.alwaysSignOff": true,
+    "git.logLevel": "Error",
+    "git.allowForcePush": true,
+
+    // Terminal configurations
+    "terminal.integrated.shellIntegration.decorationsEnabled": "gutter",
+    "terminal.integrated.shellIntegration.enabled": true,
+    "terminal.integrated.shellIntegration.decorationIcon": "circle-outline",
+    "terminal.integrated.shellIntegration.decorationIconSuccess": "primitive-dot",
+    "terminal.integrated.shellIntegration.decorationIconError": "error-small",
+    "terminal.integrated.shellIntegration.history": 100,
+
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.automationProfile.linux": {
+        "path": "/usr/bin/bash",
+        // "color": null,
+        "env": {},
+        "icon": "terminal-bash",
+        "overrideName": true
+    },
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.automationProfile.windows": {
+        "path": "/usr/bin/bash",
+        // "color": null,
+        "env": {},
+        "icon": "terminal-bash",
+        "overrideName": true
+    },
+    
+    "breadcrumbs.enabled": true,
+
+    "go.toolsManagement.autoUpdate": true,
+    "svelte.enable-ts-plugin": true,
+    
+    "editor.wordWrap": "on",
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "typescript.updateImportsOnFileMove.enabled": "never",
+    "git.openRepositoryInParentFolders": "always",
+    "[go][javascript][rust][typescript]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit",
+            "source.fixAll": "never"
+        }
+    },
+    "[c][cpp][java][python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "notebook.lineNumbers": "on",
+
+    "github.copilot.enable": {
+        "go": true,
+        "javascript": true,
+        "typescript": true,
+        "rust": true,
+        "python": true,
+        "java": true,
+        "c": true,
+        "cpp": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+
+    "github.copilot.advanced": {
+        "authProvider": "github"
+    },
+
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    }
+}

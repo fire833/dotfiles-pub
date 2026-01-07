@@ -1,0 +1,211 @@
+
+# Attribute bits for LVs, VGs, and PVs
+
+## Physical volume attribute bits (3)
+
+### Bit 1
+
+* (d)uplicate: This flag indicates whether the physical volume is duplicated or part of a redundant setup. 
+In most LVM configurations, this flag will not be set unless the PV is part of a clustered environment
+or has been configured for mirroring or other redundant storage.
+
+* (a)llocatable: Allocatable indicates whether the PV is used to store data. A PV is allocatable if it is 
+already used to create a VG. This attribute will show a or YES (if using pvdisplay command). If the PV is
+not a member of a VG yet, it cannot not be used and hence, this will attribute will show as - or "NO" (when
+using pvdisplay command).
+
+* (u)sed: "u" (Used) usually implies "a": If a PV is being used by the Volume Group (i.e., has space allocated
+to LVs), it's generally also considered active.
+
+### Bit 2
+
+Bit 2 shows whether the Physical Volume is e(x)ported or not (-). If this flag is set (x), it basically means 
+that the Volume Group created on the Physical Volume has been exported. Exporting a PV makes it unavailable 
+for use in the current system.
+
+### Bit 3
+
+Bit 3 shows whether the Physical Volume is available and visible to the LVM (-) or it is (m)issing and not
+visible to the LVM. A "missing" PV typically means that the physical device backing the PV is unavailable, 
+such as when the disk has been removed or is offline. In this state, the PV is no longer accessible, and you 
+would need to resolve the issue (e.g., reconnecting the device or replacing a failed disk).
+
+## Volume Group attribute bits (6)
+
+### Bit 1
+
+Can either be (w)riteable, (r)ead-only.
+
+* (w)riteable: This is the normal state for most Volume Groups. It means you can create, resize, and delete 
+Logical Volumes (LVs) within the VG, and you can write data to those LVs.
+
+* (r)ead-only: This state prevents any modifications to the VG or its LVs. You can still read data from existing 
+LVs, but you cannot create new LVs, resize existing ones, or write new data. This is useful for maintenance, 
+backups, or preventing accidental changes.
+
+### Bit 2
+
+* z (Resizeable): This indicates that the VG can be resized by adding or removing Physical Volumes (PVs). This is 
+a key feature of LVM, allowing you to dynamically expand or shrink your storage pool as needed.
+
+* - (Not Resizeable): This is less common. It means the VG cannot be resized. This might be due to specific 
+configurations or limitations, but it's generally not the default behavior.
+
+### Bit 3
+
+* x (Exported): A VG in an exported state ensures that the VG and its disks are not being used, and cannot be used
+until the VG is imported. Putting a VG into an unusable, offline state can be useful when doing things like moving 
+a VGs disks to another system. Exporting a VG provides some protection from its LVs being accidentally used, or 
+being used by an automated system before it's ready.
+
+* - (Not Exported): This is the standard state for single-machine LVM setups. The VG is only accessible on the local machine.
+
+### Bit 4
+
+* (p)artial: This is a critical indicator of a problem. It signifies that one or more PVs that were originally part of the 
+VG are no longer available to the system. This could be due to a drive failure, disconnection, or other hardware or software 
+issues. This is the flag you are likely seeing in your current situation and is the cause of the "Couldn't find device" 
+warnings.
+
+* - (Not Partial): This is the normal state. It means all PVs that belong to the VG are present and accessible.
+
+### Bit 5
+
+Allocation policy: This describes how LVM allocates Physical Extents (PEs) to Logical Extents (LEs) when creating or extending LVs.
+
+* (c)ontiguous: The policy requires that the physical location of any logical extent is adjacent to the physical location of the 
+immediately preceding logical extent, with the exception of the first logical extent of a LV.
+
+* c(l)ing: This policy ensures that a new logical extent is allocated to the same physical volume (PV) as an existing logical extent
+that is part of the same LV, specifically one that was allocated earlier in the LV.
+
+* (n)ormal: The normal policy attempts to allocate physical extents (PEs) in a way that avoids using the same PV for parallel 
+logical volumes (e.g., for striped or mirrored LVs) at the same offset.
+
+* (a)nywhere: LVM can allocate PEs from any available PV, regardless of their physical location.
+
+### Bit 6
+
+* (c)lustered: This indicates that the VG is part of a clustered LVM setup, allowing multiple machines to access and manage the same storage.
+
+* (s)hared: This is similar to clustered, indicating the VG is shared amongst multiple systems. There can be subtle differences in 
+how locking and metadata updates are handled between clustered and shared, but the general concept is the same.
+
+* - (Not Clustered/Shared): This is the standard state for single-machine LVM setups.
+
+## Logical Volume Attribute Bits (10)
+
+### Bit 1
+
+Volume type
+
+(C): Cache
+(m): Mirrored
+(M): Mirrored without initial sync
+(o): Origin (the source of a snapshot)
+(O): Origin with merging snapshot
+(g): Integrity (refers to integrity check functionality)
+(r): RAID
+(R): RAID without initial sync
+(s): Snapshot
+(S): Merging Snapshot
+(p): pvmove (migration of data between physical volumes)
+(v): Virtual volume
+(i): Mirror or RAID image
+(I): Mirror or RAID image out-of-sync
+(l): Mirror log device
+(c): Under conversion (e.g., between formats or states)
+(V): Thin volume
+(T): Thin pool
+(t): Thin pool data
+(D): Do pool (data) or Do pool metadata
+(e): RAID or pool metadata
+(m): Pool metadata spare
+
+### Bit 2
+
+Permissions
+
+(w): Writable
+(r): Read-only
+(R): Read-only activation of non-read-only volume
+
+### Bit 3
+
+Allocation Policy
+
+(a): Anywhere
+(c): Contiguous
+(i): Inherited
+(l): Cling
+(n): Normal
+
+### Bit 4
+
+Fixed minor
+
+(m): Fixed minor number assigned
+
+### Bit 5
+
+State
+
+(a): Active
+(h): Historical
+(s): Suspended
+(I): Invalid snapshot
+(S): Invalid suspended snapshot
+(m): Snapshot merge failed
+(M): Suspended snapshot merge failed
+(d): Mapped device present without tables
+(i): Mapped device present with inactive table
+(c): Thin-pool check needed
+(C): Suspended thin-pool check needed
+(X): Unknown
+
+### Bit 6
+
+Device Open
+
+(o): Device is open/Mounted
+(X): Unknown state
+
+### Bit 7
+
+Target type
+
+(C): Cache
+(m): Mirror
+(r): RAID
+(s): Snapshot
+(t): Thin volume
+(u): Unknown
+(v): Virtual
+
+### Bit 8
+
+Zeroed blocks
+
+(z): Newly-allocated data blocks are overwritten with zeros before use.
+
+### Bit 9
+
+Volume health
+
+Common:
+(p): Partial (some physical volumes are missing)
+(X): Unknown health status
+RAID:
+(r): Refresh needed (write errors occurred)
+(m): Mismatches exist (inconsistencies in the RAID array)
+(w): Write-mostly (RAID devices marked as write-mostly)
+Reshaping:
+(s): Reshaping (undergoing stripe changes or RAID algorithm modifications)
+(R): Remove after reshape (images freed during reshaping)
+
+### Bit 10
+
+Skip activation
+
+(k): Skip activation (the volume is flagged to be skipped during activation)
+

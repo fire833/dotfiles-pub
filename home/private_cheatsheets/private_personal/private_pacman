@@ -1,0 +1,198 @@
+# Listing packages
+
+## With version
+
+You may want to get the list of installed packages with their version, which is useful when reporting bugs or discussing installed packages.
+
+* List all explicitly installed packages: pacman -Qe.
+* List all packages in the package group named group: pacman -Sg group
+* List all foreign packages (typically manually downloaded and installed or packages removed from the repositories): pacman -Qm.
+* List all native packages (installed from the sync database): pacman -Qn.
+* List all explicitly installed native packages (i.e. present in the sync database) that are not direct or optional dependencies: pacman -Qent.
+* List packages by regex: pacman -Qs regex.
+* List packages by regex with custom output format (needs expac): expac -s "%-30n %v" regex.
+
+## With size
+
+Figuring out which packages are largest can be useful when trying to free space on your hard drive. There are two options here: get the size of individual packages, or get the size of packages and their dependencies.
+
+Individual packages
+The following command will list all installed packages and their individual sizes:
+
+$ LC_ALL=C pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h
+Packages and dependencies
+To list package sizes with their dependencies,
+
+Install expac and run expac -H M '%m\t%n' | sort -h.
+Run pacgraphAUR with the -c option.
+To list the download size of several packages (leave packages blank to list all packages):
+
+# expac -S -H M '%k\t%n' packages
+To list explicitly installed packages not in the meta package base nor package group xorg with size and description:
+
+$ expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(pacman -Qqen | sort) <({ pacman -Qqg xorg; expac -l '\n' '%E' base; } | sort -u)) | sort -n
+To list the packages marked for upgrade with their download size:
+
+$ expac -S -H M '%k\t%n' $(pacman -Qqu) | sort -sh
+To list optional dependencies only:
+
+$ expac -S "%o" package
+By date
+To list the 20 last installed packages with expac, run:
+
+$ expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20
+or, with seconds since the epoch (1970-01-01 UTC):
+
+$ expac --timefmt=%s '%l\t%n' | sort -n | tail -n 20
+Not in a specified group, repository or meta package
+Note: To get a list of packages installed as dependencies but no longer required by any installed package, see #Removing unused packages (orphans).
+List explicitly installed packages not in the base meta package:
+
+$ comm -23 <(pacman -Qqe | sort) <(expac -l '\n' '%E' base | sort)
+List explicitly installed packages not in the base meta package or xorg package group:
+
+$ comm -23 <(pacman -Qqe | sort) <({ pacman -Qqg xorg; expac -l '\n' '%E' base; } | sort -u)
+List all installed packages unrequired by other packages, and which are not in the base meta package or xorg package group:
+
+$ comm -23 <(pacman -Qqt | sort) <({ pacman -Qqg xorg; echo base; } | sort -u)
+As above, but with descriptions:
+
+$ expac -H M '%-20n\t%10d' $(comm -23 <(pacman -Qqt | sort) <({ pacman -Qqg xorg; echo base; } | sort -u))
+List all installed packages that are not in the specified repository repo_name
+
+$ comm -23 <(pacman -Qq | sort) <(pacman -Sql repo_name | sort)
+List all installed packages that are in the repo_name repository:
+
+$ comm -12 <(pacman -Qq | sort) <(pacman -Sql repo_name | sort)
+List all packages on the Arch Linux ISO that are not in the base meta package:
+
+$ comm -23 <(curl https://gitlab.archlinux.org/archlinux/archiso/-/raw/master/configs/releng/packages.x86_64) <(expac -l '\n' '%E' base | sort)
+Tip: Alternatively, use combine (instead of comm) from the moreutils package which has a syntax that is easier to remember. See combine(1).
+Development packages
+To list all development/unstable packages, run:
+
+$ pacman -Qq | grep -Ee '-(bzr|cvs|darcs|git|hg|svn)$'
+Dependencies of a package
+To obtain the list of the dependencies of a package, the simplest solution is reading the output of:
+
+$ pacman -Qi package
+For automation, instead of the error-prone method of parsing pacman output, use expac:
+
+$ expac -S '%D' package
+Browsing packages
+To browse all installed packages with an instant preview of each package:
+
+$ pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
+This uses fzf to present a two-pane view listing all packages with package info shown on the right.
+
+Enter letters to filter the list of packages; use arrow keys (or Ctrl-j/Ctrl-k) to navigate; press Enter to see package info under less.
+
+To browse all packages currently known to pacman (both installed and not yet installed) in a similar way, using fzf, use:
+
+$ pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse
+The navigational keybindings are the same, although Enter will not work in the same way.
+
+Listing files owned by a package with size
+This one might come in handy if you have found that a specific package uses a huge amount of space and you want to find out which files make up the most of that.
+
+$ pacman -Qlq package | grep -v '/$' | xargs -r du -h | sort -h
+Identify files not owned by any package
+If your system has stray files not owned by any package (a common case if you do not use the package manager to install software), you may want to find such files in order to clean them up.
+
+One method is to use pacreport --unowned-files as the root user from pacutils which will list unowned files among other details.
+
+Another is to list all files of interest and check them against pacman:
+
+# find /etc /usr /opt | LC_ALL=C pacman -Qqo - 2>&1 >&- >/dev/null | cut -d ' ' -f 5-
+Tip: The lostfiles script performs similar steps, but also includes an extensive blacklist to remove common false positives from the output.
+Tracking unowned files created by packages
+Most systems will slowly collect several ghost files such as state files, logs, indexes, etc. through the course of usual operation.
+
+pacreport from pacutils can be used to track these files and their associations via /etc/pacreport.conf (see pacreport(1) § FILES).
+
+An example may look something like this (abridged):
+
+/etc/pacreport.conf
+[Options]
+IgnoreUnowned = usr/share/applications/mimeinfo.cache
+
+[PkgIgnoreUnowned]
+alsa-utils = var/lib/alsa/asound.state
+bluez = var/lib/bluetooth
+ca-certificates = etc/ca-certificates/trust-source/*
+dbus = var/lib/dbus/machine-id
+glibc = etc/ld.so.cache
+grub = boot/grub/*
+linux = boot/initramfs-linux.img
+pacman = var/lib/pacman/local
+update-mime-database = usr/share/mime/magic
+Then, when using pacreport --unowned-files as the root user, any unowned files will be listed if the associated package is no longer installed (or if any new files have been created).
+
+Additionally, aconfmgr (aconfmgr-gitAUR) allows tracking modified and orphaned files using a configuration script.
+
+Removing unused packages (orphans)
+Orphans are packages that were installed as a dependency and are no longer required by any package.
+
+They can accumulate on your system over time either due to uninstalling packages using pacman -R package instead of pacman -Rs package, installing packages as makedepends, or packages removing dependencies in newer versions.
+
+For recursively removing orphans and their configuration files:
+
+# pacman -Qtdq | pacman -Rns -
+If no orphans were found, the output is error: argument '-' specified with empty stdin. This is expected as no arguments were passed to pacman -Rns. The error can be avoided by prefixing the second command with ifne(1) from the moreutils package.
+
+Note: The arguments -Qt list only true orphans. To include packages which are optionally required by another package, pass the -t flag twice (i.e., -Qtt).
+Tip: Add the pacman -Qtd command to a pacman post-transaction hook to be notified if a transaction orphaned a package. This can be useful for being notified when a package has been dropped from a repository, since any dropped package will also be orphaned on a local installation (unless it was explicitly installed). To avoid any "failed to execute command" errors when no orphans are found, use the following command for Exec in your hook: /usr/bin/bash -c "/usr/bin/pacman -Qtd || /usr/bin/echo '=> None found.'" The package pacman-log-orphans-hookAUR provides such hook with a more verbose instructions.
+Detecting more unneeded packages
+In some cases the method above will not detect all possible unneeded packages. E.g. dependency cycles (also known as "circular dependencies"), excessive dependencies (fullfilled more than once), some unexplicit optionals etc.
+
+To detect such packages:
+
+$ pacman -Qqd | pacman -Rsu --print -
+If you want to remove all packages in the list at once, run the command without --print argument.
+
+Removing everything but essential packages
+If it is ever necessary to remove all packages except the essentials packages, one method is to set the installation reason of the non-essential ones as dependency and then remove all unnecessary dependencies.
+
+First, for all the packages "explicitly installed", change their installation reason to "installed as a dependency":
+
+# pacman -D --asdeps $(pacman -Qqe)
+Then, change the installation reason to "explicitly installed" of only the essential packages, those you do not want to remove, in order to avoid targeting them:
+
+# pacman -D --asexplicit base linux linux-firmware
+Note:
+Additional packages can be added to the above command in order to avoid being removed. See Installation guide#Install essential packages for more info on other packages that may be necessary for a fully functional base system.
+This will also select the bootloader's package for removal. The system should still be bootable, but the boot parameters might not be changeable without it.
+Finally, follow the instructions in #Removing unused packages (orphans) to remove all packages that are "installed as a dependency".
+
+Getting the dependencies list of several packages
+Dependencies are alphabetically sorted and doubles are removed.
+
+Note: To only show the tree of local installed packages, use pacman -Qi.
+$ LC_ALL=C pacman -Si packages | awk -F'[:<=>]' '/^Depends/ {print $2}' | xargs -n1 | sort -u
+Alternatively, with expac:
+
+$ expac -l '\n' %E -S packages | sort -u
+Listing changed backup files
+To list configuration files tracked by pacman as susceptible of containing user changes (i.e. files listed in the PKGBUILD backup array) and having received user modifications, use the following command:
+
+# pacman -Qii | awk '/^MODIFIED/ {print $2}'
+Running this command with root permissions will ensure that files readable only by root (such as /etc/sudoers) are included in the output.
+
+This can be used when doing a selective system backup or when trying to replicate a system configuration from one machine to another.
+
+Tip:
+See #Listing all changed files from packages to list all changed files pacman knows about, not only backup files.
+See #Identify files not owned by any package to list all files in the system that are not tracked by pacman.
+Back up the pacman database
+The following command can be used to back up the local pacman database:
+
+$ tar -cjf pacman_database.tar.bz2 /var/lib/pacman/local
+Store the backup pacman database file on one or more offline media, such as a USB stick, external hard drive, or CD-R.
+
+The database can be restored by moving the pacman_database.tar.bz2 file into the / directory and executing the following command:
+
+# tar -xjvf pacman_database.tar.bz2
+Note: If the pacman database files are corrupted, and there is no backup file available, there exists some hope of rebuilding the pacman database. Consult #Restore pacman's local database.
+Tip: The pakbak-gitAUR package provides a script and a systemd service to automate the task. Configuration is possible in /etc/pakbak.conf.
+Check changelogs easily
+When maintainers update packages, commits are often commented in a useful fashion. Users can quickly check these from the command line by installing pacologAUR. This utility lists recent commit messages for packages from the official repositories or the AUR, by using pacolog package.

@@ -1,0 +1,19 @@
+
+# In 1.25, PodSecurityPolicies were removed. The replacement is Pod Security Admission.
+
+# Useful docs links:
+https://kubernetes.io/docs/concepts/security/pod-security-admission/
+https://kubernetes.io/docs/concepts/security/pod-security-standards/
+
+In summary, the available default policies are the following:
+
+* Privileged - Unrestricted policy, providing the widest possible level of permissions. This policy allows for known privilege escalations.
+* Baseline - Minimally restrictive policy which prevents known privilege escalations. Allows the default (minimally specified) Pod configuration.
+* Restricted - Heavily restricted policy, following current Pod hardening best practices.
+
+You can specify at the cluster or namespace level which of the policies to enforce with the following labels:
+
+* pod-security.kubernetes.io/enforce: <LEVEL> - Policy violations will cause the pod to be rejected.
+* pod-security.kubernetes.io/audit: <LEVEL> - Policy violations will trigger the addition of an audit annotation to the event recorded in the audit log, but are otherwise allowed.
+* pod-security.kubernetes.io/warn: <LEVEL> - Policy violations will trigger a user-facing warning, but are otherwise allowed.
+

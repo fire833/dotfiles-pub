@@ -1,0 +1,50 @@
+#!/usr/bin/fish
+
+# Copyright (C) 2026 Kendall Tauser
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program; if not, write to the Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+function awsume -a profile; export AWS_PROFILE=$profile; end
+function awsout -a output; export AWS_DEFAULT_OUTPUT=$output; end
+
+awsout table
+
+# AWS Aliases
+alias a "aws --color=on"
+
+alias asli "aws sso login --sso-session apd"
+
+alias alcrt "aws acm list-certificates --no-paginate"
+
+# EC2 aliases
+alias alci "aws ec2 describe-instances --no-paginate"
+alias alni "aws ec2 describe-network-interfaces --no-paginate"
+alias altgw "aws ec2 describe-transit-gateways --no-paginate"
+alias altgwa "aws ec2 describe-transit-gateway-vpc-attachments --no-paginate"
+alias alsg "aws ec2 describe-security-groups --no-paginate"
+alias alsn "aws ec2 describe-subnets --no-paginate"
+alias alvpc "aws ec2 describe-vpcs --no-paginate"
+
+# ECS aliases
+alias aee "aws ecs execute-command"
+alias aeei "aws ecs execute-command --interactive"
+
+# Cloudformation aliases
+alias acfn "aws cloudformation"
+alias acfnc "aws cloudformation create-stack"
+alias acfnd "aws cloudformation deploy"
+alias acfncc "aws cloudformation create-change-set"
+alias acfnu "aws cloudformation update-stack"
+alias acfnl "aws cloudformation list-stacks"
