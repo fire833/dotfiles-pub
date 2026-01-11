@@ -24,4 +24,3 @@ function SetColorScheme(color)
 end
 
 SetColorScheme()
-

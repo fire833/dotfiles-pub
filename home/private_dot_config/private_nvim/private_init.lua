@@ -33,9 +33,6 @@ set.number = true
 -- Disable swap file for buffers for now.
 set.swapfile = false
 
--- Set highlight on search
-vim.opt.hlsearch = false
-
 -- Set colorscheme
 set.termguicolors = true 
 
@@ -67,4 +64,3 @@ vim.opt.scrolloff = 10
 -- Searching stuff
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
-
