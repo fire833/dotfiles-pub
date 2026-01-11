@@ -15,32 +15,31 @@
 -- with this program; if not, write to the Free Software Foundation, Inc.,
 -- 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. 
 
--- require('plugins')
-require('colors')
-require('mappings')
+require("colors")
+require("mappings")
 
 -- Initial welcome print, sort of fun
 print("Welcome to Kendall's Neovim!");
 
-local set = vim.opt
+local opts = vim.opt
 
 -- Set relative line numbers.
-set.relativenumber = true
+opts.relativenumber = true
 
 -- Set line numbers with all files.
-set.number = true
+opts.number = true
 
 -- Disable swap file for buffers for now.
-set.swapfile = false
+opts.swapfile = false
 
 -- Set colorscheme
-set.termguicolors = true 
+opts.termguicolors = true 
 
 -- Disable wrapping
-vim.opt.wrap = false
+opts.wrap = false
 
 -- Enable mouse mode
-vim.opt.mouse = 'a'
+opts.mouse = 'a'
 
 -- [[ Basic Keymaps ]]
 -- Set <space> as the leader key
@@ -50,17 +49,19 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Some more configuration options for tabs/spacing.
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+opts.tabstop = 4
+opts.softtabstop = 4
+opts.shiftwidth = 4
+opts.expandtab = true
 
 -- Enable a smart indent of stuff.
-vim.opt.smartindent = true
+opts.smartindent = true
 
 -- Set the scroll off option
-vim.opt.scrolloff = 10
+opts.scrolloff = 10
 
 -- Searching stuff
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+opts.hlsearch = false
+opts.incsearch = true
+
+require("lazyvim")

@@ -17,10 +17,10 @@
 
 function SetColorScheme(color)
 	color = color or "habamax"
-	
+
 	vim.cmd.colorscheme(color)
-    	-- Thanks for the fix Spencer
-    	vim.cmd('hi Normal ctermbg=NONE guibg=NONE')
+    -- Thanks for the fix Spencer
+    vim.cmd('highlight Normal ctermbg=NONE guibg=NONE')
 end
 
 SetColorScheme()
