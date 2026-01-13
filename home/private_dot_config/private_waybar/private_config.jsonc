@@ -50,6 +50,7 @@
         "timezone": "America/Chicago",
         "format": "{:%a %b %d %T}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "locale": "en_US.UTF-8",
         "interval": 1
     },
 
