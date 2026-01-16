@@ -38,7 +38,7 @@ def get_weather(location: str):
 				print(f"{temp}{units} {wind}{windDir}")	
 
 if __name__ == "__main__":
-	loc = "norman"
+	loc = "houston"
 	if len(sys.argv) > 2:
 		loc = sys.argv[1]
 	get_weather(loc)
