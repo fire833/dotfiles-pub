@@ -1,0 +1,56 @@
+{
+    "Create directory": {
+        "prefix": "create-dir",
+        "body": [
+            "- name: Check for directory",
+            "  ansible.builtin.stat:",
+            "    path: $1",
+            "  register: $5",
+            "",
+            "- name: Create directory",
+            "  ansible.builtin.file:",
+            "    path: $1",
+            "    state: directory",
+            "    owner: $2",
+            "    group: $3",
+            "    mode: $4",
+            "  when: not $5.exists",
+            "$0"
+        ],
+        "description": "Create directory"
+    },
+    "Load template": {
+        "prefix": "load-tmpl",
+        "body": [
+            "- name: Add template",
+            "  ansible.builtin.template:",
+            "    src: $1",
+            "    dest: $2",
+            "    mode: $3",
+            "    owner: $4",
+            "    group: $5",
+            "$0"
+        ],
+        "description": "Load template"
+    },
+    "Create a user with corresponding group": {
+        "prefix": "add-usr-group",
+        "body": [
+            "- name: Add $1 group",
+            "  ansible.builtin.group:",
+            "    name: $1",
+            "    state: present",
+            "",
+            "- name: Add $1 user",
+            "  ansible.builtin.user:",
+            "    name: $1",
+            "    group: $1",
+            "    state: present",
+            "    # password: \"{{  }}\"",
+            "    shell: $2",
+            "$0",
+            ""
+        ],
+        "description": "Create a user with corresponding group"
+    }
+}
