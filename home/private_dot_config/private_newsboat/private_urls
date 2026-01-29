@@ -55,3 +55,6 @@ https://trello.status.atlassian.com/history.rss "status"
 https://opsgenie.status.atlassian.com/history.rss "status"
 https://www.akamaistatus.com/history.atom "status"
 
+# Politics
+https://www.federalregister.gov/api/v1/documents.rss "fed"
+
