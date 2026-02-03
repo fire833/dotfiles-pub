@@ -21,8 +21,8 @@ alias kc "kubectx"
 alias kn "kubens"
 
 # Other aliases
-alias ll "exa -la --git"
-alias l "exa"
+alias ll "eza -laa --git"
+alias l "eza"
 alias grep "grep --color auto"
 alias ls "ls --color auto"
 alias pgrep "ps aux | grep --color auto"
