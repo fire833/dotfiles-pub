@@ -195,6 +195,25 @@ alias pcr "podman-compose run"
 alias pcd "podman-compose down"
 alias pcdf "podman compose down -t0 --remove-orphans"
 
+# docker aliases
+if fish_is_root_user
+    alias d "docker"
+    alias dr "docker run"
+    alias dri "docker run -it"
+    alias drie "docker run -it --entrypoint"
+    alias di "docker images"
+    alias drmi "docker rmi"
+    alias dpr "docker system prune"
+else
+    alias d "sudo docker"
+    alias dr "sudo docker run"
+    alias dri "sudo docker run -it"
+    alias drie "sudo docker run -it --entrypoint"
+    alias di "sudo docker images"
+    alias drmi "sudo docker rmi"
+    alias dpr "sudo docker system prune"
+end
+
 # ykman aliases
 alias ykm "ykman"
 alias ykmc "ykman oath accounts code"
