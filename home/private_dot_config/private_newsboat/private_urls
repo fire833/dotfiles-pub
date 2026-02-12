@@ -57,4 +57,8 @@ https://www.akamaistatus.com/history.atom "status"
 
 # Politics
 https://www.federalregister.gov/api/v1/documents.rss "fed"
+https://www.congress.gov/rss/notification.xml "congress"
+https://www.congress.gov/rss/presented-to-president.xml "congress"
+https://www.congress.gov/rss/house-floor-today.xml "congress"
+https://www.congress.gov/rss/senate-floor-today.xml "congress"
 
