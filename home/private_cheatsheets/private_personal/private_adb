@@ -5,3 +5,11 @@ adb formard tcp:<srcport> tcp:<dstport>
 # Send a port from the device to the host
 adb reverse tcp:<srcport> tcp:<dstport>
 
+# Add proxy to host from phone directly
+adb shell settings put global http_proxy 127.0.0.1:8080
+
+# Delete proxy to host from phne directly
+adb shell settings put global http_proxy :0
+
+# Update - these settings for the most part don't seem to work, but keep for reference
+
