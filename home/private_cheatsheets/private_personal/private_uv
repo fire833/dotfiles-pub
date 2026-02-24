@@ -1,0 +1,4 @@
+
+# To install a wheel package directly w/o building:
+uv pip install <pkg> --no-build --index-url <url>
+
