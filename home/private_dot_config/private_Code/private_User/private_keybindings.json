@@ -60,5 +60,9 @@
         "key": "Enter",
         "command": "rust-analyzer.onEnter",
         "when": "editorTextFocus && !suggestWidgetVisible && editorLangId == rust"
+    },
+    {
+        "key": "ctrl+shift+q",
+        "command": "workbench.view.extension.claude-sidebar"
     }
 ]
