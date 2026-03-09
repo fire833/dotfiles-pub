@@ -20,7 +20,7 @@ return {
                     "pyright",
                     "bashls",
                     "gopls",
-                    -- "rust-analyzer",
+                    "rust_analyzer",
                 },
             },
         },
