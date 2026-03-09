@@ -65,3 +65,4 @@ opts.hlsearch = false
 opts.incsearch = true
 
 require("lazyvim")
+
