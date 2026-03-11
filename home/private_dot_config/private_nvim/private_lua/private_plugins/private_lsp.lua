@@ -20,6 +20,7 @@ return {
                     "pyright",
                     "bashls",
                     "gopls",
+                    "gofumpt",
                     "gitlab_ci_ls",
                     "rust_analyzer",
                     "ruff",
