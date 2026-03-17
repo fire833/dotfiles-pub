@@ -21,5 +21,7 @@ set -g fish_greeting ""
 # Setting up autocompletions for this shell
 # source ~/.config/completions/fish/*.fish
 
-starship init fish | source
+if command -q starship
+    starship init fish | source
+end
 
