@@ -4,6 +4,7 @@ return {
     -- optional: provides snippets for the snippet source
     -- dependencies = { 'rafamadriz/friendly-snippets' },
     signature = { enabled = true },
+    version = "1.*",
     completion = {
         trigger = {
             show_on_trigger_character = true,
