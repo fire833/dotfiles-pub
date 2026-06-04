@@ -1,4 +1,4 @@
 
-My home directory is /home/fire833. You should always look in **/home/fire833**, not /home/fire838 
-if you are looking for files in my home directory.
+When looking for files in my home directory, you should **always** look with ~, not with **/home/fire833**.
+You keep using /home/fire838 and it slows everything down. This is wrong. Please ALWAYS use ~.
 
