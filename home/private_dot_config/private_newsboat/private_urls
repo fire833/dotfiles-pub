@@ -30,6 +30,8 @@ https://www.gnucash.org/atom.php "~Gnucash News" "finance"
 # Work
 #https://found.statuspage.io/history.rss "~Elastic Cloud Uptime" "work"
 
+https://bobdahacker.com/feed.xml "bob"
+
 # Games
 https://www.factorio.com/blog/rss "games" "factorio"
 
@@ -54,6 +56,9 @@ https://bitbucket.status.atlassian.com/history.rss "status"
 https://trello.status.atlassian.com/history.rss "status"
 https://opsgenie.status.atlassian.com/history.rss "status"
 https://www.akamaistatus.com/history.atom "status"
+https://status.hivemq.cloud/history.rss "status"
+https://status.claude.com/history.rss "status"
+https://status.openai.com/feed.rss "status"
 
 # Politics
 https://www.federalregister.gov/api/v1/documents.rss "fed"
