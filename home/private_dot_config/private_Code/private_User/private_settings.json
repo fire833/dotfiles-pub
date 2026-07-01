@@ -104,8 +104,8 @@
         "editor.maxTokenizationLineLength": 2500,
         "editor.formatOnSave": true,
         "editor.detectIndentation": true,
-        "editor.insertSpaces": false,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.insertSpaces": false,
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit",
             "source.fixAll": "never"
@@ -122,9 +122,11 @@
     "[python]": {
         "editor.formatOnSave": true,
         "editor.detectIndentation": true,
+        "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.insertSpaces": false,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": "explicit"
+            "source.organizeImports": "explicit",
+            "source.fixAll": "always"
         },
         "editor.bracketPairColorization.enabled": true
     },
@@ -295,5 +297,25 @@
 
     "[github-actions-workflow]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "yaml.schemas": {
+        "file:///home/fire833/.vscode-oss/extensions/continue.continue-1.2.22-linux-x64/config-yaml-schema.json": [
+            ".continue/**/*.yaml"
+        ],
+        "api/schemas/schema.json": "pkg/apis/*/*.yaml",
+        "api/schemas/proxyconf.json": [
+            "proxy/config.yaml",
+            "test/proxy_config.yaml"
+        ],
+        "api/schemas/proxysecrets.json": [
+            "proxy/secrets.yaml",
+            "test/proxy_secrets.yaml"
+        ],
+        "file:///home/fire833/.vscode-oss/extensions/continue.continue-1.2.24-linux-x64/config-yaml-schema.json": [
+            ".continue/**/*.yaml"
+        ],
+        "file:///home/fire833/.vscode-oss/extensions/continue.continue-2.0.0-linux-x64/config-yaml-schema.json": [
+            ".continue/**/*.yaml"
+        ]
     }
 }
