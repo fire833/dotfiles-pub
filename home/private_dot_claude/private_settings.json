@@ -1,4 +1,25 @@
 {
-   "effortLevel": "high",
-   "autoMemoryDirectory": "~/.claude/memory"
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:*)"
+    ],
+    "deny": [
+      "Bash(printenv *)",
+      "Bash(shred *)",
+      "Bash(bat *)",
+      "Read(~/.ssh/**)",
+      "Read(~/.claude/**)",
+      "Read(~/.config/**)",
+      "Read(/etc/**)",
+      "Read(/var/**)"
+    ],
+    "ask": [
+      "Bash(aws *)",
+      "Bash(kubectl *)"
+    ]
+  },
+  "effortLevel": "high",
+  "autoMemoryDirectory": "~/.claude/memory",
+  "theme": "dark",
+  "defaultMode": "manual"
 }
