@@ -317,5 +317,8 @@
         "file:///home/fire833/.vscode-oss/extensions/continue.continue-2.0.0-linux-x64/config-yaml-schema.json": [
             ".continue/**/*.yaml"
         ]
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
     }
 }
