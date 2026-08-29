@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:*)"
+      "WebFetch(domain:*)",
+      "mcp__prometheus__*"
     ],
     "deny": [
       "Bash(printenv *)",
@@ -9,14 +10,35 @@
       "Bash(bat *)",
       "Bash(pulumi *)",
       "Read(~/.ssh/**)",
+      "Edit(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Edit(~/.aws/**)",
       "Read(~/.claude/**)",
+      "Edit(~/.claude/**)",
       "Read(~/.config/**)",
+      "Edit(~/.config/**)",
+      "Read(~/.docker/**)",
+      "Edit(~/.docker/**)",
+      "Read(~/.password-store/**)",
+      "Edit(~/.password-store/**)",
+      "Read(~/.gnupg/**)",
+      "Edit(~/.gnupg/**)",
+      "Read(~/.pulumi/**)",
+      "Edit(~/.pulumi/**)",
+      "Read(~/.kube/**)",
+      "Edit(~/.kube/**)",
+      "Read(~/.kt/**)",
+      "Edit(~/.kt/**)",
       "Read(/etc/**)",
-      "Read(/var/**)"
+      "Edit(/etc/**)",
+      "Read(/var/**)",
+      "Edit(/var/**)"
     ],
     "ask": [
       "Bash(aws *)",
-      "Bash(kubectl *)"
+      "Bash(kubectl *)",
+      "mcp__gitlab__*",
+      "mcp__incidentio__*"
     ]
   },
   "effortLevel": "high",
