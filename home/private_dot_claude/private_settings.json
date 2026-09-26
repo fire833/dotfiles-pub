@@ -11,6 +11,7 @@
       "Bash(pulumi *)",
       "Bash(keepassxc *)",
       "Bash(keepassxc-cli *)",
+      "Bash(gpg *)",
       "Read(~/.ssh/**)",
       "Edit(~/.ssh/**)",
       "Read(~/.aws/**)",
