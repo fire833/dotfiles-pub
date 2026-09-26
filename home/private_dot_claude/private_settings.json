@@ -9,6 +9,8 @@
       "Bash(shred *)",
       "Bash(bat *)",
       "Bash(pulumi *)",
+      "Bash(keepassxc *)",
+      "Bash(keepassxc-cli *)",
       "Read(~/.ssh/**)",
       "Edit(~/.ssh/**)",
       "Read(~/.aws/**)",
