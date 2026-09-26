@@ -47,5 +47,5 @@
   "effortLevel": "high",
   "autoMemoryDirectory": "~/.claude/memory",
   "theme": "dark",
-  "defaultMode": "manual"
+  "defaultMode": "default"
 }
