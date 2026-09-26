@@ -1,7 +1,6 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:*)",
       "mcp__prometheus__*"
     ],
     "deny": [
@@ -38,14 +37,16 @@
       "Edit(/var/**)"
     ],
     "ask": [
+      "WebFetch(domain:*)",
       "Bash(aws *)",
       "Bash(kubectl *)",
       "mcp__gitlab__*",
       "mcp__incidentio__*"
-    ]
+    ],
+    "defaultMode": "default"
   },
-  "effortLevel": "high",
+  "effortLevel": "medium",
   "autoMemoryDirectory": "~/.claude/memory",
   "theme": "dark",
-  "defaultMode": "default"
+  "model": "sonnet"
 }
