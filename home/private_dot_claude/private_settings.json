@@ -6,6 +6,7 @@
       "Bash(go generate *)",
       "Bash(go test *)",
       "Bash(go fmt *)",
+      "Bash(gofumpt *)",
       "Bash(go vet *)",
       "Bash(cargo build *)",
       "Bash(cargo test *)",
