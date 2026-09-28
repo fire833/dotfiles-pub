@@ -1,7 +1,17 @@
 {
   "permissions": {
     "allow": [
-      "mcp__prometheus__*"
+      "mcp__prometheus__*",
+      "Bash(go build *)",
+      "Bash(go test *)",
+      "Bash(go fmt *)",
+      "Bash(go vet *)",
+      "Bash(cargo build *)",
+      "Bash(cargo test *)",
+      "Bash(cargo check *)",
+      "Bash(cargo clippy *)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:gitlab.com)"
     ],
     "deny": [
       "Bash(printenv *)",
