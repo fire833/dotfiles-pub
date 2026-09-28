@@ -13,6 +13,7 @@
       "Bash(cargo test *)",
       "Bash(cargo check *)",
       "Bash(cargo clippy *)",
+      "Bash(tmpl *)",
       "WebFetch(domain:github.com)",
       "WebFetch(domain:gitlab.com)"
     ],
