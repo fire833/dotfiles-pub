@@ -3,6 +3,7 @@
     "allow": [
       "mcp__prometheus__*",
       "Bash(go build *)",
+      "Bash(go generate *)",
       "Bash(go test *)",
       "Bash(go fmt *)",
       "Bash(go vet *)",
@@ -20,6 +21,7 @@
       "Bash(pulumi *)",
       "Bash(keepassxc *)",
       "Bash(keepassxc-cli *)",
+      "Bash(nmcli *)",
       "Bash(gpg *)",
       "Read(~/.ssh/**)",
       "Edit(~/.ssh/**)",
@@ -50,6 +52,8 @@
       "WebFetch(domain:*)",
       "Bash(aws *)",
       "Bash(kubectl *)",
+      "Bash(go *)",
+      "Bash(cargo *)",
       "mcp__gitlab__*",
       "mcp__incidentio__*"
     ],
