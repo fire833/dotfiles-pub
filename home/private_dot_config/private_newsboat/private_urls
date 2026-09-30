@@ -22,6 +22,7 @@ https://hnrss.org/frontpage "tech"
 https://www.archlinux.org/feeds/news/ "tech"
 https://aws.amazon.com/blogs/aws/feed/ "tech" "AWS"
 https://engineering.fb.com/feed/ "tech" "facebook" "meta"
+https://www.hacktron.ai/rss.xml "tech" "hacktron"
 
 # Finance
 https://www.investopedia.com/feedbuilder/feed/getfeed?feedName=rss_headline "~Investopedia News" "finance"
