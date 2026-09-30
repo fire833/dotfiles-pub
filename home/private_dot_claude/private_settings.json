@@ -53,6 +53,7 @@
     ],
     "ask": [
       "WebFetch(domain:*)",
+      "Bash(git *)",
       "Bash(aws *)",
       "Bash(kubectl *)",
       "Bash(go tool *)",
