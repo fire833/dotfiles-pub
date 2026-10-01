@@ -94,5 +94,6 @@
   "model": "opus",
   "effortLevel": "high",
   "autoMemoryDirectory": "~/.claude/memory",
-  "theme": "dark"
+  "theme": "dark",
+  "includeGitInstructions": false
 }
