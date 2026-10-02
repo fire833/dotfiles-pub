@@ -27,6 +27,8 @@
       "Bash(keepassxc *)",
       "Bash(keepassxc-cli *)",
       "Bash(nmcli *)",
+      "Bash(curl *)",
+      "Bash(wget *)",
       "Bash(gpg *)",
       "Read(~/.ssh/**)",
       "Edit(~/.ssh/**)",
@@ -94,6 +96,11 @@
   },
   "model": "opus",
   "effortLevel": "high",
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "xhigh"
+    }
+  },
   "autoMemoryDirectory": "~/.claude/memory",
   "theme": "dark"
 }
