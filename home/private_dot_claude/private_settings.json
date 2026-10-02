@@ -1,4 +1,5 @@
 {
+  "includeGitInstructions": false,
   "permissions": {
     "allow": [
       "mcp__prometheus__*",
@@ -94,6 +95,5 @@
   "model": "opus",
   "effortLevel": "high",
   "autoMemoryDirectory": "~/.claude/memory",
-  "theme": "dark",
-  "includeGitInstructions": false
+  "theme": "dark"
 }
