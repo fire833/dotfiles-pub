@@ -103,8 +103,6 @@
       "denyWrite": [
         "~/.ssh/*",
         "~/.aws/*",
-        "~/.aws/config",
-        "~/.aws/credentials",
         "~/.claude/*",
         "~/.claude/settings.json",
         "~/.config/*",
@@ -114,20 +112,12 @@
         "~/.pulumi/*",
         "~/.password-store/*",
         "~/.kube/*",
-        "~/.kube/config",
         "~/.kt/*",
-        "~/bin/*",
-        "/etc/*",
-        "/dev/*",
-        "/var/*",
-        "/usr/bin/*",
-        "/usr/local/bin/*"
+        "/etc/*"
       ],
       "denyRead": [
         "~/.ssh/*",
         "~/.aws/*",
-        "~/.aws/config",
-        "~/.aws/credentials",
         "~/.claude/*",
         "~/.claude/settings.json",
         "~/.config/*",
@@ -137,14 +127,8 @@
         "~/.pulumi/*",
         "~/.password-store/*",
         "~/.kube/*",
-        "~/.kube/config",
         "~/.kt/*",
-        "~/bin/*",
-        "/etc/*",
-        "/dev/*",
-        "/var/*",
-        "/usr/bin/*",
-        "/usr/local/bin/*"
+        "/etc/*"
       ]
     }
   },
@@ -156,5 +140,8 @@
   },
   "autoMemoryDirectory": "~/.claude/memory",
   "theme": "dark",
-  "switchModelsOnFlag": true
+  "switchModelsOnFlag": true,
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": true
+  }
 }
