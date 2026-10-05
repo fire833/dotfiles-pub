@@ -97,6 +97,8 @@
   "model": "opus",
   "sandbox": {
     "enabled": true,
+    "autoAllowBashIfSandboxed": false,
+    "allowUnsandboxedCommands": false,
     "filesystem": {
       "denyWrite": [
         "~/.ssh/*",
