@@ -95,6 +95,57 @@
     "defaultMode": "default"
   },
   "model": "opus",
+  "sandbox": {
+    "enabled": true,
+    "filesystem": {
+      "denyWrite": [
+        "~/.ssh/*",
+        "~/.aws/*",
+        "~/.aws/config",
+        "~/.aws/credentials",
+        "~/.claude/*",
+        "~/.claude/settings.json",
+        "~/.config/*",
+        "~/.docker/*",
+        "~/.local/*",
+        "~/.gnupg/*",
+        "~/.pulumi/*",
+        "~/.password-store/*",
+        "~/.kube/*",
+        "~/.kube/config",
+        "~/.kt/*",
+        "~/bin/*",
+        "/etc/*",
+        "/dev/*",
+        "/var/*",
+        "/usr/bin/*",
+        "/usr/local/bin/*"
+      ],
+      "denyRead": [
+        "~/.ssh/*",
+        "~/.aws/*",
+        "~/.aws/config",
+        "~/.aws/credentials",
+        "~/.claude/*",
+        "~/.claude/settings.json",
+        "~/.config/*",
+        "~/.docker/*",
+        "~/.local/*",
+        "~/.gnupg/*",
+        "~/.pulumi/*",
+        "~/.password-store/*",
+        "~/.kube/*",
+        "~/.kube/config",
+        "~/.kt/*",
+        "~/bin/*",
+        "/etc/*",
+        "/dev/*",
+        "/var/*",
+        "/usr/bin/*",
+        "/usr/local/bin/*"
+      ]
+    }
+  },
   "effortLevel": "high",
   "modelSettings": {
     "claude-opus-5-5": {
@@ -102,5 +153,6 @@
     }
   },
   "autoMemoryDirectory": "~/.claude/memory",
-  "theme": "dark"
+  "theme": "dark",
+  "switchModelsOnFlag": true
 }
