@@ -120,7 +120,6 @@
       "denyRead": [
         "~/.ssh/*",
         "~/.aws/*",
-        "~/.claude/*",
         "~/.claude/settings.json",
         "~/.config/*",
         "~/.docker/*",
@@ -128,8 +127,6 @@
         "~/.gnupg/*",
         "~/.pulumi/*",
         "~/.password-store/*",
-        "~/.gitignore_global",
-        "~/.gitconfig",
         "~/.kube/*",
         "~/.kt/*",
         "/etc/*"
