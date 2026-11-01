@@ -15,10 +15,16 @@
       "Bash(cargo check *)",
       "Bash(cargo clippy *)",
       "Bash(tmpl *)",
-      "WebFetch(domain:github.com)",
-      "WebFetch(domain:gitlab.com)"
+      "WebFetch(domain:*.github.com)",
+      "WebFetch(domain:*.githubusercontent.com)",
+      "WebFetch(domain:*.gitlab.com)"
     ],
     "deny": [
+      "mcp__prometheus__delete_series",
+      "mcp__prometheus__shutdown",
+      "mcp__prometheus__clean_tombstones",
+      "mcp__prometheus__reload",
+      "mcp__prometheus__snapshot",
       "Bash(printenv *)",
       "Bash(shred *)",
       "Bash(bat *)",
@@ -30,6 +36,7 @@
       "Bash(curl *)",
       "Bash(wget *)",
       "Bash(gpg *)",
+      "Bash(sudo *)",
       "Read(~/.ssh/**)",
       "Edit(~/.ssh/**)",
       "Bash(cat *.ssh/**)",
@@ -90,19 +97,64 @@
       "Bash(cargo publish *)",
       "Bash(ps *)",
       "mcp__gitlab__*",
-      "mcp__incidentio__*"
+      "mcp__incidentio__*",
+      "mcp__alphavantage__*"
     ],
     "defaultMode": "default"
   },
   "model": "opus",
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "mattpocock-skills@claude-plugins-official": true
+  },
   "sandbox": {
     "enabled": true,
     "autoAllowBashIfSandboxed": false,
     "allowUnsandboxedCommands": false,
+    "envvars": [
+      {
+        "name": "VAULT_TOKEN",
+        "mode": "deny"
+      },
+      {
+        "name": "PULUMI_CONFIG_PASSPHRASE",
+        "mode": "deny"
+      },
+      {
+        "name": "AWS_ACCESS_KEY_ID",
+        "mode": "deny"
+      },
+      {
+        "name": "AWS_SECRET_ACCESS_KEY",
+        "mode": "deny"
+      },
+      {
+        "name": "AWS_SESSION_TOKEN",
+        "mode": "deny"
+      },
+      {
+        "name": "TALOSCONFIG",
+        "mode": "deny"
+      },
+      {
+        "name": "TALOSCONFIG",
+        "mode": "deny"
+      },
+      {
+        "name": "OMNI_ENDPOINT",
+        "mode": "deny"
+      },
+      {
+        "name": "OMNI_SERVICE_ACCOUNT_KEY",
+        "mode": "deny"
+      }
+    ],
     "filesystem": {
       "denyWrite": [
         "~/.ssh/*",
         "~/.aws/*",
+        "~/.claude/*",
+        "~/.claude.json",
         "~/.claude/*",
         "~/.claude/settings.json",
         "~/.config/*",
@@ -120,6 +172,8 @@
       "denyRead": [
         "~/.ssh/*",
         "~/.aws/*",
+        "~/.claude.json",
+        "~/.claude/*",
         "~/.claude/settings.json",
         "~/.config/*",
         "~/.docker/*",
@@ -130,6 +184,12 @@
         "~/.kube/*",
         "~/.kt/*",
         "/etc/*"
+      ],
+      "allowRead": [
+        "~/.claude/memory/*"
+      ],
+      "allowWrite": [
+        "~/.claude/memory/*"
       ]
     }
   },
@@ -141,8 +201,5 @@
   },
   "autoMemoryDirectory": "~/.claude/memory",
   "theme": "dark",
-  "switchModelsOnFlag": true,
-  "enabledPlugins": {
-    "rust-analyzer-lsp@claude-plugins-official": true
-  }
+  "switchModelsOnFlag": true
 }

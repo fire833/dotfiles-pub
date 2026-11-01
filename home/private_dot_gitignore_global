@@ -1,5 +1,6 @@
 # Global git ignore patterns
 ~/.aws/credentials
+~/.aws/config
 ~/.kube/config
 ~/.cache
 ~/.gnupg
@@ -8,3 +9,5 @@
 ~/videos
 ~/sites
 
+**/.claude/.cc-writes/
+**/.claude/settings.local.json
