@@ -104,52 +104,16 @@
   },
   "model": "opus",
   "enabledPlugins": {
-    "rust-analyzer-lsp@claude-plugins-official": true,
-    "mattpocock-skills@claude-plugins-official": true
+    "rust-analyzer-lsp@claude-plugins-official": true
   },
   "sandbox": {
     "enabled": true,
     "autoAllowBashIfSandboxed": false,
     "allowUnsandboxedCommands": false,
-    "envvars": [
-      {
-        "name": "VAULT_TOKEN",
-        "mode": "deny"
-      },
-      {
-        "name": "PULUMI_CONFIG_PASSPHRASE",
-        "mode": "deny"
-      },
-      {
-        "name": "AWS_ACCESS_KEY_ID",
-        "mode": "deny"
-      },
-      {
-        "name": "AWS_SECRET_ACCESS_KEY",
-        "mode": "deny"
-      },
-      {
-        "name": "AWS_SESSION_TOKEN",
-        "mode": "deny"
-      },
-      {
-        "name": "TALOSCONFIG",
-        "mode": "deny"
-      },
-      {
-        "name": "TALOSCONFIG",
-        "mode": "deny"
-      },
-      {
-        "name": "OMNI_ENDPOINT",
-        "mode": "deny"
-      },
-      {
-        "name": "OMNI_SERVICE_ACCOUNT_KEY",
-        "mode": "deny"
-      }
-    ],
     "filesystem": {
+      "allowWrite": [
+        "~/.claude/memory/*"
+      ],
       "denyWrite": [
         "~/.ssh/*",
         "~/.aws/*",
@@ -187,11 +151,46 @@
       ],
       "allowRead": [
         "~/.claude/memory/*"
-      ],
-      "allowWrite": [
-        "~/.claude/memory/*"
       ]
-    }
+    },
+    "envvars": [
+      {
+        "name": "VAULT_TOKEN",
+        "mode": "deny"
+      },
+      {
+        "name": "PULUMI_CONFIG_PASSPHRASE",
+        "mode": "deny"
+      },
+      {
+        "name": "AWS_ACCESS_KEY_ID",
+        "mode": "deny"
+      },
+      {
+        "name": "AWS_SECRET_ACCESS_KEY",
+        "mode": "deny"
+      },
+      {
+        "name": "AWS_SESSION_TOKEN",
+        "mode": "deny"
+      },
+      {
+        "name": "TALOSCONFIG",
+        "mode": "deny"
+      },
+      {
+        "name": "TALOSCONFIG",
+        "mode": "deny"
+      },
+      {
+        "name": "OMNI_ENDPOINT",
+        "mode": "deny"
+      },
+      {
+        "name": "OMNI_SERVICE_ACCOUNT_KEY",
+        "mode": "deny"
+      }
+    ]
   },
   "effortLevel": "high",
   "modelSettings": {
