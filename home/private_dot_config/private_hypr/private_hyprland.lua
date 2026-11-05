@@ -79,10 +79,10 @@ hl.config({
         border_size = 2,
         col = {
             active_border = {
-                colors = { colors["foreground-2"], colors["foreground-4"] },
+                colors = { foreground_2, foreground_4 },
                 angle  = 90,
             },
-            inactive_border = colors["background-2"],
+            inactive_border = background_2,
         },
 
         allow_tearing = false,
