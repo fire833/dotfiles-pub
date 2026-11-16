@@ -1,4 +1,4 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 
 # Copyright (C) 2026 Kendall Tauser
 #
